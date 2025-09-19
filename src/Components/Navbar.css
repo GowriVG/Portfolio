@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px 20px; */
+    /* margin: 20px 170px;  */
+    margin: 0 auto; /* Center navbar horizontally */
+    max-width: 1200px;
+}
+
+.navbar img {
+    height: 80px; /* Or whatever height matches your menu */
+    width: auto;
+}
+
+.nav-menu{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 60px;
+    font-size: 20px;
+}
+
+
+
