@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import ProfilePic from '../Assets/GowriProfilec.png';
-import { HERO_CONTENT } from '../constants';
+import {ArrowDown } from 'lucide-react';
+import TextType from './Text-Type/TextType';
+import AnimatedText from './AnimatedText';
+
+<TextType 
+  text={["Text typing effect", "for your websites", "Happy coding!"]}
+  typingSpeed={75}
+  pauseDuration={1500}
+  showCursor={true}
+  cursorCharacter="|"
+/>
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="px-6 lg:px-20 pb-4 lg:mb-36">
+    <section id="home" className="px-6 lg:px-20 pb-4 lg:mb-36">
       <div className="flex flex-wrap lg:flex-row-reverse ">
         
         {/* Profile Image */}
@@ -32,38 +42,52 @@ const Hero = () => {
 
         {/* Text Section */}
         <div className="w-full lg:w-1/2">
-          <div className={`
-            flex flex-col items-center lg:items-start mt-10
-            transform transition-all duration-1000 ease-out delay-200
-            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-          `}>
+          <div
+            className={`
+              flex flex-col items-center lg:items-start mt-10
+              transform transition-all duration-1000 ease-out delay-200
+              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+            `}
+          >
             <h3 className="pb-2 text-4xl tracking-tighter lg:text-8xl">
               Gowri V Gopal
             </h3>
-            <span className="bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text text-3xl tracking-tight text-transparent">
-                Master of Computer Application Student 
-            </span>
-            <p className="my-1 max-w-lg py-5 text-xl leading-relaxed tracking-tighter text-justify">
-              {HERO_CONTENT}
-            </p>
-            <a
-              href="/Gowri_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              download
-              className={`
-                bg-white rounded-full px-6 py-3 text-sm text-stone-800 mb-10 shadow-md
-                transform transition-all duration-1000 ease-out delay-500
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
-              `}
-            >
-              Download Resume
-            </a>
+           
+   <AnimatedText isVisible={isVisible} />
+
+ 
+           
+            <div>
+            <div className={`pt-4 transform transition-all duration-1000 ease-out delay-500
+                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+             <a
+                href="/Gowri_Resume.pdf"
+                download
+                className="px-6 py-2 rounded-full 
+                          bg-[linear-gradient(to_right,#9999ae,#35353a)] 
+                          text-white font-medium
+                          transition-all duration-300
+                          hover:scale-105 hover:shadow-[0_0_15px_rgba(153,153,174,0.5)]
+                          active:scale-95"
+                >
+                Download Resume
+              </a>
+           
+
+
+            </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+        <span className="text-sm text-muted-foreground mb-2"> Scroll </span>
+        <ArrowDown className="h-5 w-5 text-primary" />
+      </div>
+    </section>
   );
 };
 
 export default Hero;
+
+

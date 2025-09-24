@@ -1,6 +1,9 @@
 import Navbar from './Components/Navbar'
 import Hero from './Components/Hero'
+import About from './Components/AboutMe'
 import Technologies from './Components/Technologies'
+import { ProjectsSection as Projects } from './Components/Projects';
+
 
 const App = () => {
   return (
@@ -13,7 +16,9 @@ const App = () => {
       <div className='container mx-auto px-8'>
         <Navbar />
         <Hero />
+        <About/>
         <Technologies/>
+        <Projects/>
       </div>
     </div>
   )

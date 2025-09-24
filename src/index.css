@@ -7,3 +7,11 @@
   background: #000000;
 }
 
+
+.text-gradient span {
+  background: linear-gradient(to right, theme('colors.stone.300'), theme('colors.stone.600'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
