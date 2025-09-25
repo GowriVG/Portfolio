@@ -7,13 +7,15 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="row target-section relative z-20 px-6 h-auto pt-16 md:pt-40"
+      className="row target-section relative z-20 px-6 h-auto pt-16 md:pt-10"
       data-parallax="scroll"
     >
       {/* Heading outside ScrollReveal */}
-      <h2 className="my-20 text-center text-4xl">
+      <h2 className=" my-3 text-center text-4xl">
         About <span className="text-primary">Me</span>
       </h2>
+      <div className="w-40 h-1 bg-purple-500 mx-auto mt-4"></div>
+ 
       
       {/* ScrollReveal wrapping plain text */}
       <ScrollReveal

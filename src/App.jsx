@@ -3,7 +3,8 @@ import Hero from './Components/Hero'
 import About from './Components/AboutMe'
 import Technologies from './Components/Technologies'
 import { ProjectsSection as Projects } from './Components/Projects';
-
+import Education from './Components/Education';
+import CertificatesSection from './Components/Certificates';
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
         <About/>
         <Technologies/>
         <Projects/>
+        <Education/>
+        <CertificatesSection/>
       </div>
     </div>
   )

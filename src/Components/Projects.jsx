@@ -31,7 +31,7 @@ const Projects = [
     githubUrl: "#",
   },
   {
-    id: 3,
+    id: 4,
     title: "E-commerce Platform",
     description:
       "Full-featured e-commerce platform with user authentication and payment processing.",
@@ -46,10 +46,11 @@ export const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+        <h2 className=" text-center text-4xl">
           {" "}
-          Featured <span className="text-primary"> Projects </span>
+          <span className="my-4 text-primary"> Projects </span>
         </h2>
+        <div className="my-3 w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Here are some of my recent projects. Each project was carefully

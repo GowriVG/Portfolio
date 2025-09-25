@@ -17,17 +17,42 @@ const navItems = [
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Responsive logic for nav items
+  const socialLinks = [
+    {
+      href: "https://www.linkedin.com/in/gowri-v-gopal-2332a9213/",
+      icon: <FaLinkedin />,
+      label: "LinkedIn"
+    },
+    {
+      href: "https://www.linkedin.com/in/your-linkedin-profile",
+      icon: <FaGithub />,
+      label: "Github"
+    },
+    {
+      href: "https://www.linkedin.com/in/your-linkedin-profile",
+      icon: <FaInstagram />,
+      label: "Instagram"
+    },
+    {
+      href: "https://www.linkedin.com/in/your-linkedin-profile",
+      icon: <FaSquareXTwitter />,
+      label: "Twitter"
+    }
+  ];
+
   return (
     <nav className="flex items-center justify-between py-6">
-       {/* Logo */}
+      {/* Logo */}
       <div className="flex flex-shrink-0 items-center">
         <a href="/" aria-label="Home">
-          <img src={logo} className="mx-10" width={150} height={80} alt="Logo"/>
+          <img src={logo} className="mx-10" width={150} height={80} alt="Logo" />
         </a>
       </div>
 
-      {/* Desktop nav (visible on md and above) */}
-      <ul className="hidden md:flex gap-6 text-lg font-medium text-white">
+      {/* Desktop nav (visible on lg and above) */}
+      <ul className="hidden lg:flex gap-6 text-lg font-medium text-white">
         {navItems.map((item, key) => (
           <li key={key}>
             <a href={item.href} className="hover:text-blue-400">
@@ -37,65 +62,68 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {/* Mobile nav toggle button (visible only on small screens) */}
+      {/* Medium screens: show nothing, everything in hamburger */}
+      <ul className="hidden sm:hidden md:hidden gap-6 text-lg font-medium text-white"></ul>
+
+      {/* Small screens: show nothing, everything in hamburger */}
+      <ul className="hidden sm:flex md:hidden gap-6 text-lg font-medium text-white"></ul>
+
+      {/* Hamburger menu button (visible on md and below) */}
       <button
         onClick={() => setIsMenuOpen((prev) => !prev)}
-        className="md:hidden p-2 text-white z-50"
+        className="flex lg:hidden p-2 text-white z-50"
         aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
       >
         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile menu (overlay) */}
+      {/* Hamburger menu overlay: visible on lg and below */}
       <div
-        className={`fixed inset-0 bg-black/90 z-40 flex flex-col items-center justify-center 
-        transition-all duration-300 md:hidden
+        className={`fixed inset-0 bg-black/90 z-40 flex flex-col items-center justify-center transition-all duration-300 lg:hidden
         ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
       >
         <div className="flex flex-col space-y-8 text-xl text-white">
+          {/* All nav items in hamburger menu on md and below */}
           {navItems.map((item, key) => (
             <a
               key={key}
               href={item.href}
               className="hover:text-blue-400 transition-colors duration-300"
-              onClick={() => setIsMenuOpen(false)} // close menu on click
+              onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
             </a>
           ))}
+          {/* Social Links in hamburger menu */}
+          <div className="flex items-center justify-center gap-4 text-2xl mt-8">
+            {socialLinks.map((link, idx) => (
+              <a
+                key={idx}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Social Links */}
-      <div className="m-8 flex items-center justify-center gap-4 text-2xl">
-        <a 
-          href="https://www.linkedin.com/in/gowri-v-gopal-2332a9213/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn">
-            <FaLinkedin/>
-        </a>
-        <a 
-          href="https://www.linkedin.com/in/your-linkedin-profile"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Github">
-          <FaGithub />
-        </a>
-        <a 
-          href="https://www.linkedin.com/in/your-linkedin-profile"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram">
-          <FaInstagram />
-        </a>
-        <a 
-          href="https://www.linkedin.com/in/your-linkedin-profile"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter">
-          <FaSquareXTwitter/>
-        </a>
+      {/* Social Links - visible only on md and above */}
+      <div className="m-8 hidden lg:flex items-center justify-center gap-4 text-2xl">
+        {socialLinks.map((link, idx) => (
+          <a
+            key={idx}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+          >
+            {link.icon}
+          </a>
+        ))}
       </div>
     </nav>
   );
