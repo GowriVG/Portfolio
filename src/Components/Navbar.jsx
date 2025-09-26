@@ -1,9 +1,11 @@
 import './Navbar.css'
 import logo from '../assets/logo.png'
+import underline from '../assets/nav_underline.svg';
 import { FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
 import { FaSquareXTwitter } from 'react-icons/fa6';
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 //nav items array to avoid repeating code
 const navItems = [
@@ -17,6 +19,7 @@ const navItems = [
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("Home");
 
   // Responsive logic for nav items
   const socialLinks = [
@@ -54,10 +57,16 @@ const Navbar = () => {
       {/* Desktop nav (visible on lg and above) */}
       <ul className="hidden lg:flex gap-6 text-lg font-medium text-white">
         {navItems.map((item, key) => (
-          <li key={key}>
-            <a href={item.href} className="hover:text-blue-400">
+          <li key={key} className="flex flex-col items-center" onClick={() => setActiveMenu(item.name)}>
+            <a 
+              href={item.href} 
+              className={`hover:text-blue-400${activeMenu === item.name ? ' nav-active-up' : ''}`}
+            >
               {item.name}
             </a>
+            {activeMenu === item.name ? (
+              <img src={underline} alt="underline" className="nav-underline-img" />
+            ) : null}
           </li>
         ))}
       </ul>
