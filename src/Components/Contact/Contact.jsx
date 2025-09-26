@@ -1,6 +1,5 @@
 import React from 'react'
 import './Contact.css'
-import theme_pattern from '../../assets/theme_pattern.svg'
 import mail_icon from '../../assets/mail_icon.svg'
 import location_icon from '../../assets/location_icon.svg'
 import call_icon from '../../assets/call_icon.svg'
@@ -36,22 +35,27 @@ const Contact = () => {
   return (
     <div id='contact' className='contact'>
       <div className="title-box">
-        <h1>Get in touch</h1>
-        <img src={theme_pattern} alt="" />
+        {/* Section Heading */}
+        <h2 className="text-center mb-16text-center text-4xl text-white">
+          Get In Touch
+        </h2>
+        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
       </div>
       <div className="contact-section">
         <div className="contact-left">
             <h1>Let's talk</h1>
-            <p>I'm currently avaliable to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact anytime.</p>
+            <p>
+              I'm open to new collaborations, internships, or exciting project opportunities. If you have an idea, a question, or just want to connect, feel free to reach out! Let's build something great together—I'm always happy to discuss your goals and help turn your vision into reality.
+            </p>
             <div className="contact-details">
                 <div className="contact-detail">
-                    <img src={mail_icon} alt="" /> <p>greatstackdev@gmail.com</p>
+                    <img src={mail_icon} alt="" /> <p>gowrivgopal12131@gmail.com</p>
                 </div>
                 <div className="contact-detail">
-                    <img src={call_icon} alt="" /> <p>+772-825-524</p>
+                    <img src={call_icon} alt="" /> <p>+91-7510294504</p>
                 </div>
                 <div className="contact-detail">
-                    <img src={location_icon} alt="" /> <p>CA, United States</p>
+                    <img src={location_icon} alt="" /> <p>Thiruvananthapuram</p>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import './Navbar.css'
-import logo from '../assets/logo.png'
-import underline from '../assets/nav_underline.svg';
+import logo from '../../assets/logo.png'
+import underline from '../../assets/org.png';
 import { FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
 import { FaSquareXTwitter } from 'react-icons/fa6';
 import { Menu, X } from "lucide-react";

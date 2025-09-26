@@ -1,11 +1,11 @@
-import Navbar from './Components/Navbar'
+import Navbar from './Components/Navbar/Navbar'
 import Hero from './Components/Hero'
 import About from './Components/AboutMe'
 import Technologies from './Components/Technologies'
 import { ProjectsSection as Projects } from './Components/Projects';
 import Education from './Components/Education';
 import CertificatesSection from './Components/Certificates';
-import Contact from './Components/Contact/Contact';
+import Contact from './Components/Contact/contact';
 
 const App = () => {
   return (

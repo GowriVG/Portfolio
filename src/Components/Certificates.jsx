@@ -52,8 +52,9 @@ const CertificatesSection = () => {
       <div className="container mx-auto max-w-6xl">
         {/* Section Heading */}
         <h2 className="text-center mb-16text-center text-4xl text-white">
-          Certificates & <span className="text-purple-400">Workshops</span>
+          Certificates & Workshops
         </h2>
+        <div className="w-52 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className="text-center text-gray-400 mt-4 mb-12 max-w-2xl mx-auto">
           Here are some of the certifications and workshops I have successfully completed.
         </p>
