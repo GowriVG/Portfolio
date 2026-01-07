@@ -1,6 +1,6 @@
 import './Navbar.css'
 import logo from '../../assets/logo.png'
-import underline from '../../assets/org.png';
+// import underline from '../../assets/org.png';
 import { FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
 import { FaSquareXTwitter } from 'react-icons/fa6';
 import { Menu, X } from "lucide-react";
@@ -29,17 +29,17 @@ const Navbar = () => {
       label: "LinkedIn"
     },
     {
-      href: "https://www.linkedin.com/in/your-linkedin-profile",
+      href: "https://github.com/GowriVG",
       icon: <FaGithub />,
       label: "Github"
     },
     {
-      href: "https://www.linkedin.com/in/your-linkedin-profile",
+      href: "https://www.instagram.com/gx.wri__/",
       icon: <FaInstagram />,
       label: "Instagram"
     },
     {
-      href: "https://www.linkedin.com/in/your-linkedin-profile",
+      href: "https://x.com/GowriVGopa48552",
       icon: <FaSquareXTwitter />,
       label: "Twitter"
     }
@@ -54,19 +54,19 @@ const Navbar = () => {
         </a>
       </div>
 
-      {/* Desktop nav (visible on lg and above) */}
+      {/* Desktop nav */}
       <ul className="hidden lg:flex gap-6 text-lg font-medium text-white">
         {navItems.map((item, key) => (
-          <li key={key} className="flex flex-col items-center" onClick={() => setActiveMenu(item.name)}>
+          <li key={key} className="flex flex-col items-center">
             <a 
-              href={item.href} 
-              className={`hover:text-blue-400${activeMenu === item.name ? ' nav-active-up' : ''}`}
+              href={item.href}
+              onClick={() => setActiveMenu(item.name)}
+              // We add 'nav-link' for the line logic, and 'active' if selected
+              className={`nav-link hover:text-blue-400 ${activeMenu === item.name ? 'active' : ''}`}
             >
               {item.name}
             </a>
-            {activeMenu === item.name ? (
-              <img src={underline} alt="underline" className="nav-underline-img" />
-            ) : null}
+            {/* REMOVED THE IMG TAG LOGIC HERE */}
           </li>
         ))}
       </ul>

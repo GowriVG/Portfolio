@@ -1,0 +1,45 @@
+.parallax {
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* fit container to avoid overflow */
+  margin-block: 1.3rem;
+  padding: 0;
+}
+
+.scroller {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  text-align: center;
+  /* Remove text-based sizing from old marquee to prevent tall rows */
+  font-size: 0; /* ensure no stray text affects height */
+  line-height: 1;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+  min-height: 0;
+  gap: 0;
+  width: max-content;
+}
+
+.scroller > div {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.scroller img {
+  display: inline-block;
+  max-height: 2.5rem;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.scroller span {
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  /* Keep images tidy on larger screens without inflating row height */
+  .scroller img {
+    max-height: 2.5rem;
+    margin: 0;
+  }
+}

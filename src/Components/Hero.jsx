@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ProfilePic from '../Assets/GowriProfilec.png';
+import ProfilePic from '../Assets/hero.png';
 import {ArrowDown } from 'lucide-react';
 import TextType from './Text-Type/TextType';
 import AnimatedText from './AnimatedText';
@@ -16,9 +16,10 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 200); // delay for smooth start
+    const timer = setTimeout(() => setIsVisible(true), 200);
     return () => clearTimeout(timer);
-  }, []);
+  }, 
+  []);
 
   return (
     <section id="home" className="px-6 lg:px-20 pb-4 lg:mb-36">
@@ -28,7 +29,7 @@ const Hero = () => {
         <div className="w-full lg:w-1/2">
           <div className="flex justify-center lg:p-8">
             <img
-              // src={ProfilePic}
+              src={ProfilePic}
               alt="Gowri V Gopal"
               className={`
                 w-200 h-148 rounded-2xl border border-transparent object-contain
@@ -53,7 +54,7 @@ const Hero = () => {
               Gowri V Gopal
             </h3>
            
-   <AnimatedText isVisible={isVisible} />
+            <AnimatedText isVisible={isVisible} />
 
  
            

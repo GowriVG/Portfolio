@@ -79,7 +79,7 @@
     border: none;
     color: white;
     border-radius: 50px;
-    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+    background: linear-gradient(264deg, #898783 -5.09%, #29282a 106.28%);
     font-size: 18px;
     padding: 18px 40px;
     margin-bottom: 50px;
@@ -117,6 +117,37 @@
     .contact-right label{
         font-size: 14px;
     }
-   
-    
+}
+.contact-submit[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* Dark popup look */
+.dark-popup {
+  width: 390px !important;      /* Smaller width */
+  padding: 6px 19px !important; /* Reduced spacing */
+  border-radius: 12px !important;
+  /* padding: 1px !important; */
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #3a3a3a !important;
+}
+
+/* Title style */
+.dark-title {
+  font-size: 22px !important;
+  font-weight: 600 !important;
+}
+
+/* Confirm button */
+.dark-confirm-btn {
+  color: #141414 !important;
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 10px 25px !important;
+  font-weight: 600 !important;
+  transition: 0.2s;
+}
+
+.dark-confirm-btn:hover {
+  background-color: #cfcfcf !important;
 }

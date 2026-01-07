@@ -4,14 +4,27 @@
 
 :root {
   font-family: 'Inter', sans-serif;
-  background: #000000;
+
+  /* Fallback color */
+  background-color: #000000;
+
+  /* Radial Gradient (The "Spotlight" Effect):
+     - #1f1f1f is a dark ash/charcoal.
+     - #000000 is pure black.
+     - This creates a soft glow in the center that fades out.
+  */
+  background-image: radial-gradient(circle at center, #1f1f1f 0%, #000000 100%);
+
+  /* Essential to make the gradient cover the full screen */
+  min-height: 100vh;
+  background-attachment: fixed; /* Keeps the background static while scrolling */
+  background-size: cover;
 }
 
-
+/* ... keep your other classes below ... */
 .text-gradient span {
   background: linear-gradient(to right, theme('colors.stone.300'), theme('colors.stone.600'));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 

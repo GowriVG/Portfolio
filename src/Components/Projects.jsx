@@ -58,9 +58,9 @@ export const ProjectsSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {Projects.map((project, key) => (
+          {Projects.map((project, index) => (
             <div
-              key={key}
+              key={index}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
               <div className="h-48 overflow-hidden">
