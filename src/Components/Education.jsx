@@ -1,5 +1,5 @@
 import React from "react";
-import { education } from "../constants"; // Import the education data
+import { education } from "../constants"; 
 
 const Education = () => {
   return (
@@ -9,7 +9,6 @@ const Education = () => {
     >
       {/* Section Title */}
       <div className="text-center mb-16">
-        {/* <h2 className="text-4xl font-bold text-white">EDUCATION</h2> */}
         <h2 className=" text-center text-4xl text-white">Education</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">
@@ -19,10 +18,8 @@ const Education = () => {
 
       {/* Education Timeline */}
       <div className="relative">
-        {/* Vertical line */}
         <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white/30 h-full z-0"></div>
 
-        {/* Education Entries */}
         {education.map((edu, index) => (
           <div
             key={edu.id}
@@ -31,25 +28,25 @@ const Education = () => {
             }`}
           >
 
-            {/* Content Section */}
             <div
               className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-black/70 z-10
-                backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
+              backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
                 index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
               } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
             >
-              {/* Flex container for image and text */}
               <div className="flex items-center space-x-6">
-                {/* School Logo/Image */}
-                <div className="w-30 h-25 rounded-md overflow-hidden">
+                
+                {/* --- CHANGE MADE HERE --- */}
+                {/* Removed 'bg-white/10' and replaced with 'bg-transparent' */}
+                <div className="flex-shrink-0 w-24 h-24 rounded-md overflow-hidden bg-transparent"> 
                   <img
                     src={edu.img}
                     alt={edu.school}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain" // Removed p-1 as well since no background box is needed
                   />
                 </div>
+                {/* ------------------------ */}
 
-                {/* Degree, School Name, and Date */}
                 <div className="flex flex-col justify-between">
                   <div>
                     <h3 className="text-xl sm:text-xl font-semibold text-white">
@@ -59,7 +56,6 @@ const Education = () => {
                       {edu.school}
                     </h4>
                   </div>
-                  {/* Date at the bottom */}
                   <p className="text-sm text-gray-500 mt-2">{edu.date}</p>
                 </div>
               </div>
