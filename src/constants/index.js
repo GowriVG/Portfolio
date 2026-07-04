@@ -32,14 +32,6 @@ export const EXPERIENCES = [
 ];
 
 
-
-export const CONTACT = {
-  address: "767 Fifth Avenue, New York, NY 10153 ",
-  phoneNo: "+12 4555 666 00 ",
-  email: "me@example.com",
-};
-
-
  // Experience Section Logo's
 // import webverseLogo from './assets/company_logo/webverse_logo.png';
 // import agcLogo from './assets/company_logo/agc_logo.png';
@@ -49,7 +41,7 @@ export const CONTACT = {
 import NSSLogo from '../assets/education_logo/NSSLogo.png';
 import RajLogo from '../assets/education_logo/RajagiriLogo.png';
 import ChristLogo from '../assets/education_logo/ChristLogo.png';
-import FRLogo2 from '../assets/education_logo/FRLogo2.png';
+import FRLogo from '../assets/education_logo/FRLogo.png';
 
 
 
@@ -116,7 +108,7 @@ import FRLogo2 from '../assets/education_logo/FRLogo2.png';
       school: "Rajagiri College of Social Sciences",
       date: "June 2024 - Present",
       grade: "7.75 CGPA",
-      desc: "I am pursuing my Master's degree (MCA) in Computer Applications at Rajagiri College of Social Sciences, Ernakulam, where I am building a strong foundation in programming, software development, and computer science concepts. My coursework and academic projects are helping me strengthen both technical expertise and problem-solving skills.",
+      desc: "I hold a Master of Computer Applications (MCA) from Rajagiri College of Social Sciences, Ernakulam. My academic journey provided me with a robust foundation in software development, data structures, and modern programming paradigms, which I have successfully applied to complex technical projects and problem-solving challenges.",
       degree: "Master of Computer Applications - MCA",
     },
     {
@@ -130,7 +122,7 @@ import FRLogo2 from '../assets/education_logo/FRLogo2.png';
     },
     {
       id: 2,
-      img: FRLogo2,
+      img: FRLogo,
       school: "FR.Phillips Higher Secondary School, Nellikad",
       date: "March 2021",
       grade: "98%",

@@ -9,7 +9,7 @@ import ScrollVelocity from './ScrollVelocity/ScrollVelocity.jsx'
 import { 
   FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, 
   FaNodeJs, FaPython, FaJava, FaDocker, FaGitAlt, 
-  FaGithub, FaCode, FaChartBar, FaEye 
+  FaGithub, FaCode, FaChartBar, FaEye,FaProjectDiagram,FaCogs,FaCloud 
 } from "react-icons/fa"
 
 // 2. DevIcons (Good for languages/databases)
@@ -20,6 +20,11 @@ import {
 
 // 3. Simple Icons (Brand specific)
 import { SiTailwindcss, SiAngular, SiDotnet, SiVite } from "react-icons/si"
+
+import { 
+  SiPostman, 
+  SiSwagger 
+} from "react-icons/si"
 
 // Reusable Component for consistent style
 const TechCard = ({ Icon, name, color }) => {
@@ -39,9 +44,9 @@ const TechCard = ({ Icon, name, color }) => {
 
 const Technologies = () => {
   return (
-    <div className="text-center mb-16 relative z-10">
-      <h2 className='text-center text-4xl text-white font-bold'>Technologies</h2>
-        <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4"></div>
+    <div className="text-center mb-16">
+      <h2 className='text-center text-4xl text-white '>Technologies</h2>
+        <div className="w-32 h-1  bg-purple-500 mx-auto mt-4"></div>
 
       {/* --- ROW 1: FRONTEND & WEB FRAMEWORKS --- */}
       <div className="mb-8 mt-12">
@@ -87,6 +92,15 @@ const Technologies = () => {
             <TechCard Icon={FaDocker} name="Docker" color="text-blue-500" />
             <TechCard Icon={DiVisualstudio} name="VS Code" color="text-blue-400" />
             <TechCard Icon={SiVite} name="Vite" color="text-purple-400" />
+
+            {/* Cloud & DevOps */}
+            <TechCard Icon={FaCloud} name="Azure" color="text-blue-500" />
+            <TechCard Icon={FaCogs} name="Azure DevOps" color="text-blue-400" />
+
+            {/* API Tools */}
+            <TechCard Icon={FaProjectDiagram} name="Graph API" color="text-purple-400" />
+            <TechCard Icon={SiSwagger} name="Swagger" color="text-green-500" />
+            <TechCard Icon={SiPostman} name="Postman" color="text-orange-500" />
         </ScrollVelocity>
       </div>
       

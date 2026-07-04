@@ -5,7 +5,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-24 pb-1 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3"
+      className="py-16 pb-1 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3"
     >
       {/* Section Title */}
       <div className="text-center mb-16">
@@ -35,17 +35,13 @@ const Education = () => {
               } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
             >
               <div className="flex items-center space-x-6">
-                
-                {/* --- CHANGE MADE HERE --- */}
-                {/* Removed 'bg-white/10' and replaced with 'bg-transparent' */}
                 <div className="flex-shrink-0 w-24 h-24 rounded-md overflow-hidden bg-transparent"> 
                   <img
                     src={edu.img}
                     alt={edu.school}
-                    className="w-full h-full object-contain" // Removed p-1 as well since no background box is needed
+                    className="w-full h-full object-contain" 
                   />
                 </div>
-                {/* ------------------------ */}
 
                 <div className="flex flex-col justify-between">
                   <div>

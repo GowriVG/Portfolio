@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ProfilePic from '../Assets/hero.png';
+import ProfilePic from '../Assets/gowri.png';
 import {ArrowDown } from 'lucide-react';
 import TextType from './Text-Type/TextType';
 import AnimatedText from './AnimatedText';
