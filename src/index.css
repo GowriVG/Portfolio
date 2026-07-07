@@ -4,21 +4,21 @@
 
 :root {
   font-family: 'Inter', sans-serif;
-
   /* Fallback color */
   background-color: #000000;
-
+  min-height: 100vh;
   /* Radial Gradient (The "Spotlight" Effect):
      - #1f1f1f is a dark ash/charcoal.
      - #000000 is pure black.
      - This creates a soft glow in the center that fades out.
   */
-  background-image: radial-gradient(circle at center, #1f1f1f 0%, #000000 100%);
-
-  /* Essential to make the gradient cover the full screen */
-  min-height: 100vh;
-  background-attachment: fixed; /* Keeps the background static while scrolling */
-  background-size: cover;
+  /* background-image: radial-gradient(circle at center, #1f1f1f 0%, #000000 100%); */
+  /* background-attachment: fixed; /* Keeps the background static while scrolling */
+  /* background-size: cover; */ 
+}
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ... keep your other classes below ... */
@@ -27,4 +27,71 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* ── Wavy contour line background ── */
+.bg-lines-pattern {
+  background-color: #050510;
+  background-image:
+    /* Fine horizontal lines */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 38px,
+      rgba(255, 255, 255, 0.03) 38px,
+      rgba(255, 255, 255, 0.03) 39px
+    ),
+    /* Fine vertical lines — forms a subtle grid */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 38px,
+      rgba(255, 255, 255, 0.03) 38px,
+      rgba(255, 255, 255, 0.03) 39px
+    ),
+    /* Large arc from bottom-left — the main wavy shape */
+    radial-gradient(
+      ellipse 140% 140% at -10% 110%,
+      transparent 40%,
+      rgba(160, 160, 180, 0.055) 41%,
+      rgba(160, 160, 180, 0.055) 42%,
+      transparent 43%,
+      transparent 50%,
+      rgba(160, 160, 180, 0.04) 51%,
+      rgba(160, 160, 180, 0.04) 52%,
+      transparent 53%,
+      transparent 61%,
+      rgba(160, 160, 180, 0.03) 62%,
+      rgba(160, 160, 180, 0.03) 63%,
+      transparent 64%
+    ),
+    /* Large arc from bottom-right */
+    radial-gradient(
+      ellipse 140% 140% at 110% 110%,
+      transparent 40%,
+      rgba(160, 160, 180, 0.05) 41%,
+      rgba(160, 160, 180, 0.05) 42%,
+      transparent 43%,
+      transparent 52%,
+      rgba(160, 160, 180, 0.035) 53%,
+      rgba(160, 160, 180, 0.035) 54%,
+      transparent 55%,
+      transparent 63%,
+      rgba(160, 160, 180, 0.025) 64%,
+      rgba(160, 160, 180, 0.025) 65%,
+      transparent 66%
+    ),
+    /* Top-right arc for balance */
+    radial-gradient(
+      ellipse 120% 120% at 110% -10%,
+      transparent 45%,
+      rgba(140, 140, 160, 0.04) 46%,
+      rgba(140, 140, 160, 0.04) 47%,
+      transparent 48%,
+      transparent 57%,
+      rgba(140, 140, 160, 0.03) 58%,
+      rgba(140, 140, 160, 0.03) 59%,
+      transparent 60%
+    );
+}
+
 

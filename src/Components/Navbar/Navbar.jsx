@@ -1,18 +1,19 @@
-import './Navbar.css'
-import logo from '../../assets/logo.png'
-// import underline from '../../assets/org.png';
-import { FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
-import { FaSquareXTwitter } from 'react-icons/fa6';
+import "./Navbar.css";
+import logo from "../../assets/logo.png";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 //nav items array to avoid repeating code
 const navItems = [
-  { name: "Home", href: "#hero" },
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Technologies", href: "#technologies" },
   { name: "Education", href: "#education" },
+  { name: "Certificates", href: "#certificates" },
+  { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#project" },
   { name: "Contact", href: "#contact" },
 ];
@@ -26,23 +27,23 @@ const Navbar = () => {
     {
       href: "https://www.linkedin.com/in/gowri-v-gopal-2332a9213/",
       icon: <FaLinkedin />,
-      label: "LinkedIn"
+      label: "LinkedIn",
     },
     {
       href: "https://github.com/GowriVG",
       icon: <FaGithub />,
-      label: "Github"
+      label: "Github",
     },
     {
       href: "https://www.instagram.com/gx.wri__/",
       icon: <FaInstagram />,
-      label: "Instagram"
+      label: "Instagram",
     },
     {
       href: "https://x.com/GowriVGopa48552",
       icon: <FaSquareXTwitter />,
-      label: "Twitter"
-    }
+      label: "Twitter",
+    },
   ];
 
   return (
@@ -50,7 +51,13 @@ const Navbar = () => {
       {/* Logo */}
       <div className="flex flex-shrink-0 items-center">
         <a href="/" aria-label="Home">
-          <img src={logo} className="mx-10" width={150} height={80} alt="Logo" />
+          <img
+            src={logo}
+            className="mx-10"
+            width={150}
+            height={80}
+            alt="Logo"
+          />
         </a>
       </div>
 
@@ -58,15 +65,14 @@ const Navbar = () => {
       <ul className="hidden lg:flex gap-6 text-lg font-medium text-white">
         {navItems.map((item, key) => (
           <li key={key} className="flex flex-col items-center">
-            <a 
+            <a
               href={item.href}
               onClick={() => setActiveMenu(item.name)}
               // We add 'nav-link' for the line logic, and 'active' if selected
-              className={`nav-link hover:text-blue-400 ${activeMenu === item.name ? 'active' : ''}`}
+              className={`nav-link hover:text-blue-400 ${activeMenu === item.name ? "active" : ""}`}
             >
               {item.name}
             </a>
-            {/* REMOVED THE IMG TAG LOGIC HERE */}
           </li>
         ))}
       </ul>
@@ -138,9 +144,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar
-
-
-
-
-
+export default Navbar;
