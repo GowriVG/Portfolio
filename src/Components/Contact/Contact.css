@@ -142,6 +142,13 @@
     flex-direction: column;
     gap: 24px;
   }
+  /* ADD inside @media (max-width: 768px) */
+.contact-submit {
+  align-self: center;
+  width: 160px;
+  margin-bottom: 24px;
+  margin-top: 8px;
+}
   .contact-left {
     width: 100%;
     margin-bottom: 0;
@@ -168,6 +175,7 @@
   }
 }
 .contact-submit[disabled] {
+    width: 100%;
   opacity: 0.6;
   cursor: not-allowed;
 }
