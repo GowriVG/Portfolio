@@ -20,7 +20,7 @@ const App = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(60,60,60,0.35),transparent)]" />
       </div>
       {/* Navbar + Hero + About */}
-      <div className="w-full px-4 sm:px-8 lg:px-12">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-12">
         {" "}
         {/* ← no overflow-x-hidden */}
         <Navbar />
@@ -28,11 +28,11 @@ const App = () => {
         <About />
       </div>
       {/* Technologies — now in its own container, aligned with rest */}
-      <div className="w-full px-4 sm:px-8 lg:px-12">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-12">
         <Technologies />
       </div>
       {/* Rest of sections */}
-      <div className="w-full px-4 sm:px-8 lg:px-12">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-12">
         {" "}
         {/* ← no overflow-x-hidden */}
         <Projects />

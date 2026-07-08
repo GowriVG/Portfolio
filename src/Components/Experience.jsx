@@ -23,7 +23,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" className="py-16 px-4 sm:px-8 lg:px-12">
+    <section id="experience" className="py-16 ">
       {/* Section Title */}
       <div className="text-center mb-16">
         <h2 className="text-center text-4xl text-white">Experience</h2>

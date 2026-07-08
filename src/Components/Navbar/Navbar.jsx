@@ -51,18 +51,20 @@ const Navbar = () => {
       {/* Logo */}
       <div className="flex flex-shrink-0 items-center">
         <a href="/" aria-label="Home">
-          <img
+          {/* <img
             src={logo}
             className="mx-10"
             width={150}
             height={80}
             alt="Logo"
-          />
+          /> */}
+          <img src={logo} className="mr-4" width={150} height={70} alt="Logo" />
         </a>
       </div>
 
       {/* Desktop nav */}
-      <ul className="hidden lg:flex gap-6 text-lg font-medium text-white">
+      {/* <ul className="hidden lg:flex gap-6 text-lg font-medium text-white"> */}
+      <ul className="hidden lg:flex gap-3 xl:gap-6 text-sm xl:text-base font-medium text-white">
         {navItems.map((item, key) => (
           <li key={key} className="flex flex-col items-center">
             <a
@@ -127,7 +129,7 @@ const Navbar = () => {
       </div>
 
       {/* Social Links - visible only on md and above */}
-      <div className="m-8 hidden lg:flex items-center justify-center gap-4 text-2xl">
+      <div className="m-8 hidden lg:flex items-center justify-center gap-3 text-xl">
         {socialLinks.map((link, idx) => (
           <a
             key={idx}
