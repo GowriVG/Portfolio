@@ -50,7 +50,7 @@ const certificates = [
     year: "2025",
     desc: "Built production-ready REST APIs using ASP.NET Core, Entity Framework, JWT auth, and Swagger.",
     link: "https://drive.google.com/file/d/1xo99ItwCXn0WtOgPlgErQUGKipki_giy/view?usp=sharing",
-  },
+  }
 ];
 
 function wrapText(text, maxChars) {
@@ -90,9 +90,8 @@ function wrapName(text, maxChars) {
 function createCertCard(cert) {
   const nameLines = wrapName(cert.name, 20);
   const descLines = wrapText(cert.desc, 36);
-
   const nameY = 80;
-  const nameLineHeight = 42; // was 22 — must be ≥ font size
+  const nameLineHeight = 42; 
   const dividerY = nameY + 2 * nameLineHeight + 28;
   const certifierY = dividerY + 46;
   const yearY = certifierY + 36;

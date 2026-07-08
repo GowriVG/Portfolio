@@ -1,6 +1,3 @@
-    // <div className="text-center mb-16">
-    //   <h2 className='text-center text-4xl text-white'>Technologies</h2>
-    //     <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
 import React from 'react'
 import ScrollVelocity from './ScrollVelocity/ScrollVelocity.jsx'
 
@@ -29,9 +26,9 @@ import {
 // Reusable Component for consistent style
 const TechCard = ({ Icon, name, color }) => {
   return (
-    <div className="flex flex-col items-center justify-center mx-6 group cursor-pointer select-none">
+    <div className="flex flex-col items-center justify-center mx-5 group cursor-pointer select-none">
       {/* Icon Container */}
-      <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-3 shadow-lg group-hover:border-purple-500/50 group-hover:bg-white/10 transition-all duration-300">
+      <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
         <Icon className={`text-4xl ${color} drop-shadow-md`} />
       </div>
       {/* Text Underneath */}
@@ -44,9 +41,24 @@ const TechCard = ({ Icon, name, color }) => {
 
 const Technologies = () => {
   return (
-    <div className="text-center mb-16">
-      <h2 className='text-center text-4xl text-white '>Technologies</h2>
-        <div className="w-32 h-1  bg-purple-500 mx-auto mt-4"></div>
+    <div className="text-center mb-4">
+      <h2 className='text-center tracking-tigh text-4xl text-white' style={{
+            fontFamily: '"Commissioner", sans-serif',
+            fontWeight: 400,
+            letterSpacing: "0.02em",
+          }}>Technologies</h2>
+         <div
+          style={{
+            width: "210px",
+            height: "2px",
+            margin: "14px auto 0",
+            background:
+              "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
+            borderRadius: "2px",
+            boxShadow:
+              "0 0 10px rgba(180, 180, 200, 0.5), 0 0 24px rgba(160, 160, 190, 0.25)",
+          }}
+        />
 
       {/* --- ROW 1: FRONTEND & WEB FRAMEWORKS --- */}
       <div className="mb-8 mt-12">

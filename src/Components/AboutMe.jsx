@@ -7,16 +7,26 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="row target-section relative z-20 px-6 h-auto pt-16 md:pt-10"
+      className="row target-section relative z-20 px-6 h-auto pt-16 md:pt-1"
       data-parallax="scroll"
     >
       {/* Heading outside ScrollReveal */}
-      <h2 className=" my-3 text-center text-4xl">
-        About <span className="text-primary">Me</span>
+      <h2 className="text-center tracking-tight text-4xl text-white">
+        About Me
       </h2>
-      <div className="w-40 h-1 bg-purple-500 mx-auto mt-4"></div>
+      <div
+          style={{
+            width: "160px",
+            height: "2px",
+            margin: "14px auto 0",
+            background:
+              "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
+            borderRadius: "2px",
+            boxShadow:
+              "0 0 10px rgba(180, 180, 200, 0.5), 0 0 24px rgba(160, 160, 190, 0.25)",
+          }}
+        />
  
-      
       {/* ScrollReveal wrapping plain text */}
       <ScrollReveal
         baseOpacity={0}
@@ -25,7 +35,6 @@ export default function AboutMe() {
         blurStrength={10}
         containerClassName="rounded-2xl w-full flex flex-col justify-between text-justify"
         textClassName="text-base md:text-sm lg:text-sm leading-relaxed"
-
       >
         {aboutMeText}
       </ScrollReveal>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { experiences } from "../constants";
+import { EXPERIENCES } from "../constants";
 
 const Experience = () => {
   const [visibleItems, setVisibleItems] = useState([]);
@@ -23,11 +23,31 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" className="py-16 ">
+    <section id="experience" className="py-2 px-4 relative">
       {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-center text-4xl text-white">Experience</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
+      <div className="text-center mb-8">
+        <h2
+          className="text-center tracking-tight text-4xl text-white"
+          style={{
+            fontFamily: '"Commissioner", sans-serif',
+            fontWeight: 400,
+            letterSpacing: "0.02em",
+          }}
+        >
+          Experience
+        </h2>
+        <div
+          style={{
+            width: "210px",
+            height: "2px",
+            margin: "14px auto 0",
+            background:
+              "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
+            borderRadius: "2px",
+            boxShadow:
+              "0 0 10px rgba(180, 180, 200, 0.5), 0 0 24px rgba(160, 160, 190, 0.25)",
+          }}
+        />
         <p className="text-gray-400 mt-4 text-base sm:text-lg font-semibold">
           My professional journey so far
         </p>
@@ -35,23 +55,63 @@ const Experience = () => {
 
       {/* Timeline */}
       <div className="relative max-w-4xl mx-auto">
-        {/* Vertical line */}
-        <div className="absolute left-4 sm:left-1/2 sm:-translate-x-px top-0 w-0.5 h-full bg-white/20 z-0" />
+        {/* Vertical line — desktop only */}
+        <div className="hidden sm:block absolute left-1/2 -translate-x-px top-0 w-0.5 h-full bg-white/20 z-0" />
+        {/* Vertical line — mobile */}
+        <div className="sm:hidden absolute left-5 top-0 w-0.5 h-full bg-white/20 z-0" />
 
-        {experiences.map((exp, index) => {
+        {EXPERIENCES.map((exp, index) => {
           const isEven = index % 2 === 0;
           const isVisible = visibleItems.includes(index);
+
+          const Card = (
+            <div
+              className="p-5 sm:p-6 rounded-2xl border border-white/10
+              bg-black/60 backdrop-blur-md
+              shadow-[0_0_20px_1px_rgba(150,150,180,0.2)]
+              hover:border-[#9999ae]/40 hover:shadow-[0_0_28px_2px_rgba(160,160,200,0.35)]
+              transition-all duration-300"
+            >
+              <div className="mb-4">
+                <h3 className="text-white font-semibold text-base sm:text-lg leading-snug">
+                  {exp.role}
+                </h3>
+                <p className="text-[#9999ae] text-sm font-medium mt-0.5">
+                  {exp.company}
+                </p>
+                {/* Date inside card — mobile only */}
+                <p className="sm:hidden text-gray-500 text-xs mt-1">
+                  {exp.date}
+                </p>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                {exp.desc}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {exp.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="text-[11px] font-medium px-2.5 py-0.5 rounded-full
+                      bg-white/5 border border-yellow-500/40 text-[#c0bfc4]"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          );
+
+          const DateLabel = (
+            <span className="text-gray-400 text-xs font-medium whitespace-nowrap">
+              {exp.date}
+            </span>
+          );
 
           return (
             <div
               key={exp.id}
               ref={(el) => (itemRefs.current[index] = el)}
-              className={`relative flex mb-12 sm:mb-16
-                /* mobile: always left-aligned */
-                flex-row
-                /* desktop: alternate sides */
-                sm:${isEven ? "flex-row" : "flex-row-reverse"}
-              `}
+              className="relative mb-12 sm:mb-16"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(32px)",
@@ -59,57 +119,62 @@ const Experience = () => {
                 transitionDelay: `${index * 0.1}s`,
               }}
             >
-              {/* Dot on the line */}
-              <div
-                className={`absolute left-4 sm:left-1/2 top-6
-                w-3.5 h-3.5 rounded-full border-2 border-purple-500 bg-[#0a0a0a] z-10
-                -translate-x-1/2`}
-              />
+              {/* ── Desktop: 3-column grid ── */}
+              <div className="hidden sm:flex items-start">
+                {/* Left slot */}
+                <div className="w-[46%] pr-4 flex justify-end">
+                  {isEven ? Card : <div className="pt-5">{DateLabel}</div>}
+                </div>
 
-              {/* Card — offset from center line */}
-              <div
-                className={`
-                ml-12 sm:ml-0 w-full
-                sm:w-[46%]
-                ${isEven ? "sm:mr-auto sm:pr-8" : "sm:ml-auto sm:pl-8"}
-              `}
-              >
-                <div
-                  className="p-5 sm:p-6 rounded-2xl border border-white/10
-                  bg-black/60 backdrop-blur-md
-                  shadow-[0_0_20px_1px_rgba(130,69,236,0.2)]
-                  hover:border-purple-500/40 hover:shadow-[0_0_28px_2px_rgba(130,69,236,0.35)]
-                  transition-all duration-300"
-                >
-                  {/* Role + Company + Date */}
-                  <div className="mb-4">
-                    <h3 className="text-white font-semibold text-base sm:text-lg leading-snug">
-                      {exp.role}
-                    </h3>
-                    <p className="text-purple-400 text-sm font-medium mt-0.5">
-                      {exp.company}
-                    </p>
-                    <p className="text-gray-500 text-xs mt-1">{exp.date}</p>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                    {exp.desc}
-                  </p>
-
-                  {/* Skills */}
-                  <div className="flex flex-wrap gap-2">
-                    {exp.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-[11px] font-medium px-2.5 py-0.5 rounded-full
-                          bg-purple-500/10 border border-purple-500/30 text-purple-300"
-                      >
-                        {skill}
+                {/* Center: dot */}
+                <div className="w-[8%] flex justify-center pt-4">
+                  <div
+                    className="w-10 h-10 rounded-full border-2 border-[#C6C3B5] z-10
+                      flex items-center justify-center overflow-hidden flex-shrink-0"
+                    style={{ background: exp.iconBg }}
+                  >
+                    {exp.img ? (
+                      <img
+                        src={exp.img}
+                        alt={exp.company}
+                        className={`${exp.imgSize || "w-6 h-6"} object-contain`}
+                      />
+                    ) : (
+                      <span className="text-[#9999ae] text-xs font-bold">
+                        {exp.company.charAt(0)}
                       </span>
-                    ))}
+                    )}
                   </div>
                 </div>
+
+                {/* Right slot */}
+                <div className="w-[46%] pl-4 flex justify-start">
+                  {isEven ? <div className="pt-5">{DateLabel}</div> : Card}
+                </div>
+              </div>
+
+              {/* ── Mobile: left-aligned with dot on line ── */}
+              <div className="sm:hidden flex items-start">
+                <div className="relative flex-shrink-0 mr-4">
+                  <div
+                    className="w-10 h-10 rounded-full border-2 border-[#C6C3B5] z-10
+                      flex items-center justify-center overflow-hidden"
+                    style={{ background: exp.iconBg }}
+                  >
+                    {exp.img ? (
+                      <img
+                        src={exp.img}
+                        alt={exp.company}
+                        className={`${exp.imgSize || "w-5 h-5"} object-contain`}
+                      />
+                    ) : (
+                      <span className="text-[#9999ae] text-xs font-bold">
+                        {exp.company.charAt(0)}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="flex-1">{Card}</div>
               </div>
             </div>
           );

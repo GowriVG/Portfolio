@@ -21,7 +21,6 @@ const Hero = () => {
         /* desktop: fill viewport height, centered */
         lg:min-h-[calc(100vh-80px)] lg:pt-0 lg:pb-0 lg:flex lg:items-center"
     >
-      {/* ── MOBILE (< 768px): stacked — small image on top, text below ── */}
       <div className="flex flex-col items-center gap-6 md:hidden px-6">
         {/* Small circular photo — mobile only */}
         <div

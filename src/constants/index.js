@@ -1,41 +1,41 @@
 export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 5 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
 
+// Experience Section Logo's
+import HRBlockLogo from '../assets/Company_logo/HR block.png';
+import RevstarLogo from '../assets/Company_logo/Revstar.png';
 export const EXPERIENCES = [
   {
-    year: "2023 - Present",
-    role: "Senior Full Stack Developer",
-    company: "Google Inc.",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Javascript", "React.js", "Next.js", "mongoDB"],
+    id: 0,
+    img: HRBlockLogo,
+    iconBg: "#dacfb7",
+    role: "Software Developer Intern",
+    company: "H&R Block (India) Private Limited",
+    date: "Dec 2025 – June 2026",
+    desc: "Built full-stack applications using Angular and .NET, designing and integrating REST APIs to enable efficient data communication across services. Managed dependencies using Azure DevOps Artifact Feeds to maintain consistent package versioning. Monitored application performance in Azure, analyzed system metrics, and debugged issues to enhance system stability.",
+    skills: ["Angular", ".NET", "REST API", "Azure DevOps", "Azure"],
   },
   {
-    year: "2022 - 2023",
-    role: "Frontend Developer",
-    company: "Adobe",
-    description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["HTML", "CSS", "Vue.js", "mySQL"],
+    id: 1,
+    img: RevstarLogo,
+    imgSize: "w-9 h-9",
+    iconBg: "#dacfb7",
+    role: "HR and Marketing Intern",
+    company: "Revstar Solutions",
+    date: "June 2025",
+    desc: "Coordinated candidate workflows and supported daily HR operations in recruitment processes. Managed email communications and maintained CRM records, enabling smooth coordination across HR, marketing, and administrative functions.",
+    skills: ["Recruitment", "CRM", "Email Marketing"],
   },
   {
-    year: "2021 - 2022",
-    role: "Full Stack Developer",
-    company: "Facebook",
-    description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-    technologies: ["Python", "Svelte", "Three.js", "Postgres"],
-  },
-  {
-    year: "2020 - 2021",
-    role: "Software Engineer",
-    company: "Paypal",
-    description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
-    technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
+    id: 2,
+    img: HRBlockLogo,
+    iconBg: "#dacfb7",
+    role: "Full-Stack Developer Intern",
+    company: "H&R Block (India) Private Limited",
+    date: "April 2025 – May 2025",
+    desc: "Developed a full-stack Hospital Management System using Angular and .NET, enabling efficient handling of patient, doctor, and appointment workflows. Collaborated with developers to integrate frontend, backend, and database components, improving system functionality and reducing integration gaps.",
+    skills: ["Angular", ".NET", "SQL Server", "REST API"],
   },
 ];
-
-
- // Experience Section Logo's
-// import webverseLogo from './assets/company_logo/webverse_logo.png';
-// import agcLogo from './assets/company_logo/agc_logo.png';
-// import newtonschoolLogo from './assets/company_logo/newtonschool_logo.png';
 
 // Education Section Logo's
 import NSSLogo from '../assets/education_logo/NSSLogo.png';
@@ -43,65 +43,7 @@ import RajLogo from '../assets/education_logo/RajagiriLogo.png';
 import ChristLogo from '../assets/education_logo/ChristLogo.png';
 import FRLogo from '../assets/education_logo/FRLogo.png';
 
-
-
-  export const experiences = [
-    {
-      id: 0,
-      //img: webverseLogo,
-      role: "Fullstack Developer",
-      company: "Webverse Digital",
-      date: "April 2024 - Present",
-      desc: "Developed dynamic and scalable web applications using the MERN stack, handling both frontend and backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
-      skills: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React JS",
-        "TypeScript",
-        "Node JS",
-        "Tailwind CSS",
-        "MongoDb",
-        "Redux",
-        " Next Js",
-      ],
-    },
-    {
-      id: 1,
-      //img: agcLogo,
-      role: "Fullstack Engineer",
-      company: "Agumentik Group of Companies",
-      date: "July 2023 - March 2024",
-      desc: "Contributed to innovative projects as a Fullstack Engineer, leading both frontend and backend development using technologies such as HTML, CSS, JavaScript, PHP, SQL, Bootstrap, and ReactJS. Worked closely with the team to deliver responsive, high-performance web applications and improve user experience through seamless integration of various technologies.",
-      skills: [
-        "ReactJS",
-        "Redux",
-        "JavaScript",
-        "Tailwind CSS",
-        "HTML",
-        "CSS",
-        "SQL",
-      ],
-    },
-    {
-      id: 2,
-      //img: newtonschoolLogo,
-      role: "Frontend Intern",
-      company: "Newton School",
-      date: "September 2021 - August 2022",
-      desc: "Worked as a Frontend Developer Intern, designing and implementing scalable UI components and responsive websites using HTML, CSS, JavaScript, Bootstrap, and Material UI. Collaborated with the design team to translate wireframes and prototypes from Figma into interactive, user-friendly web pages.",
-      skills: [
-        "HTML",
-        "CSS",
-        "Javascript",
-        "Bootstrap",
-        "Figma",
-        "Material UI",
-      ],
-    },
-  ];
-  
-  export const education = [
+export const education = [
     {
       id: 0,
       img: RajLogo,

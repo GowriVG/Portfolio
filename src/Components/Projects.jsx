@@ -87,11 +87,26 @@ const Projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="px-4 py-20 relative">
+    <section id="projects" className="py-2 px-4 relative">
       <div className="w-full max-w-7xl mx-auto">
-        <h2 className="text-center text-4xl text-white">Projects</h2>
-        <div className="w-32 h-0.5 bg-slate-500 mx-auto mt-4 mb-4"></div>
-        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+        <h2 className="text-center tracking-tight text-4xl text-white" style={{
+            fontFamily: '"Commissioner", sans-serif',
+            fontWeight: 400,
+            letterSpacing: "0.02em",
+          }}>Projects</h2>
+        <div
+          style={{
+            width: "180px",
+            height: "2px",
+            margin: "14px auto 0",
+            background:
+              "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
+            borderRadius: "2px",
+            boxShadow:
+              "0 0 10px rgba(180, 180, 200, 0.5), 0 0 24px rgba(160, 160, 190, 0.25)",
+          }}
+        />
+        <p className="text-center py-3 text-gray-400 mb-4 max-w-2xl mx-auto">
           Here are some of my recent projects. Each project was carefully
           crafted with attention to detail, performance, and user experience.
         </p>

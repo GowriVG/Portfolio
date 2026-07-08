@@ -5,13 +5,31 @@ const Education = () => {
   return (
     <section
       id="education"
-      //className="py-16 pb-1 px-4 sm:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3"
-    className="py-16 pb-1 px-4 font-sans bg-skills-gradient clip-path-custom-3"
+      className="py-4 px-4 font-sans bg-skills-gradient clip-path-custom-3"
     >
-      {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-center text-4xl text-white">Education</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
+      <div className="text-center mb-10">
+        <h2
+          className="text-center tracking-tight  text-4xl text-white"
+          style={{
+            fontFamily: '"Commissioner", sans-serif',
+            fontWeight: 500,
+            letterSpacing: "0.02em",
+          }}
+        >
+          Education
+        </h2>
+        <div
+          style={{
+            width: "160px",
+            height: "2px",
+            margin: "14px auto 0",
+            background:
+              "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
+            borderRadius: "2px",
+            boxShadow:
+              "0 0 10px rgba(180, 180, 200, 0.5), 0 0 24px rgba(160, 160, 190, 0.25)",
+          }}
+        ></div>
         <p className="text-gray-400 mt-4 text-base sm:text-lg font-semibold">
           My education has been a journey of learning and development. Here are
           the details of my academic background
@@ -19,8 +37,7 @@ const Education = () => {
       </div>
 
       {/* ── MOBILE: simple stacked list, no timeline ── */}
-      {/* <div className="flex flex-col gap-6 lg:hidden"> */}
-        <div className="flex flex-col gap-6 lg:hidden max-w-2xl mx-auto">
+      <div className="flex flex-col gap-6 lg:hidden max-w-2xl mx-auto">
         {education.map((edu) => (
           <div
             key={edu.id}
@@ -60,8 +77,7 @@ const Education = () => {
       </div>
 
       {/* ── DESKTOP (lg+): zig-zag timeline ── */}
-      {/* <div className="relative hidden lg:block"> */}
-        <div className="max-w-4xl mx-auto relative hidden lg:block">
+      <div className="max-w-4xl mx-auto relative hidden lg:block">
         <div className="absolute left-1/2 -translate-x-1/2 w-1 bg-white/30 h-full z-0"></div>
 
         {education.map((edu, index) => (
