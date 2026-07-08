@@ -154,37 +154,54 @@ const galleryItems = certificates.map((cert) => ({
 
 const CertificatesSection = () => {
   return (
-    <section id="certificates" className="pt-16 pb-0 px-4 sm:px-8">
-      {/* Section Heading */}
-      <div className="text-center mb-12">
-        <h2 className="text-center text-4xl text-white">
+    <section id="certificates" className="pt-12 pb-0 px-4 sm:px-8" style={{ position: "relative" }}>
+      <div className="text-center mb-4">
+        <h2 className="text-center tracking-tight text-4xl text-white" style={{ fontFamily: '"Commissioner", sans-serif', fontWeight: 500, letterSpacing: '0.02em'}}>
           Certificates & Workshops
         </h2>
-        <div className="w-52 h-1 bg-purple-500 mx-auto mt-4"></div>
+        <div style={{
+          width: '350px',
+          height: '2px',
+          margin: '14px auto 0',
+          background: 'linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)',
+          borderRadius: '2px',
+          boxShadow: '0 0 10px rgba(180, 180, 200, 0.5), 0 0 24px rgba(160, 160, 190, 0.25)',
+        }}></div>
         <p className="text-center text-gray-400 mt-4 max-w-2xl mx-auto">
           Here are some of the certifications and workshops I have successfully
           completed.
         </p>
       </div>
+{/* Left arrow */}
+<div style={{
+  position: "absolute", left: "-3px", top: "60%", transform: "translateY(-50%)",
+  zIndex: 10, color: "rgba(200,200,220,0.6)", fontSize: "28px",
+  pointerEvents: "none", userSelect: "none", lineHeight: 1,
+  textShadow: "0 0 12px rgba(180,180,210,0.7)"
+}}>‹</div>
 
-      <div
-        style={{
-          height: "500px",
-          position: "relative",
-          overflow: "hidden",
-          marginTop: "-60px",
-        }}
-      >
-        <CircularGallery
-          items={galleryItems}
-          bend={0}
-          textColor="#ffffff"
-          borderRadius={0.06}
-          scrollSpeed={2.5}
-          scrollEase={0.05}
-          font="bold 1px sans-serif"
-        />
-      </div>
+<div style={{ height: "360px", overflow: "hidden", marginTop: "10px" }}>
+  {/* inner div shifts canvas up to cut top empty space */}
+  <div style={{ height: "500px", position: "relative", marginTop: "-80px" }}>
+    <CircularGallery
+      items={galleryItems}
+      bend={0}
+      textColor="#ffffff"
+      borderRadius={0.06}
+      scrollSpeed={2.5}
+      scrollEase={0.05}
+      font="bold 1px sans-serif"
+    />
+  </div>
+</div>
+
+{/* Right arrow */}
+<div style={{
+  position: "absolute", right: "-3px", top: "60%", transform: "translateY(-50%)",
+  zIndex: 10, color: "rgba(200,200,220,0.6)", fontSize: "28px",
+  pointerEvents: "none", userSelect: "none", lineHeight: 1,
+  textShadow: "0 0 12px rgba(180,180,210,0.7)"
+}}>›</div>
     </section>
   );
 };
