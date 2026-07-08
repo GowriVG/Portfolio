@@ -67,13 +67,15 @@ const Contact = () => {
 
   return (
     <div id='contact' className='contact'>
-      <div className="title-box">
-        {/* Section Heading */}
-        <h2 className="text-center mb-16text-center text-4xl text-white">
-          Get In Touch
-        </h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-      </div>
+      {/* <div className="text-center">
+  <h2 className="text-4xl text-white text-center">Get In Touch</h2>
+  <div className="w-32 h-1 bg-purple-500 mx-auto mt-4 mb-2"></div>
+</div> */}
+<div className="text-center">
+ 
+  <h2 className="text-4xl  tracking-tight text-white" style={{ fontFamily: '"Commissioner", sans-serif', fontWeight: 500, letterSpacing: '0.02em'}} >Get In Touch</h2>
+  <div className="contact-heading-line"></div>
+</div>
       <div className="contact-section">
         <div className="contact-left">
             <h1>Let's talk</h1>
