@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "./Contact.css";
-import mail_icon from "../../assets/mail_icon.svg";
-import location_icon from "../../assets/location_icon.svg";
-import call_icon from "../../assets/call_icon.svg";
+import mail_icon from "../../assets/contact_section_logo/mail_icon.svg";
+import location_icon from "../../assets/contact_section_logo/location_icon.svg";
+import call_icon from "../../assets/contact_section_logo/call_icon.svg";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
