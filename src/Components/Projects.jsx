@@ -1,13 +1,18 @@
 import React from "react";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
-
+import Project1 from "../assets/projects/project1.png";
+import AzureResourceHealth from "../assets/projects/AzureResourceHealth.png";
+import Lumi from "../assets/projects/Lumi.png";
+import OpsNexus from "../assets/projects/OpsNexus.png";
+import EEPArtifact from "../assets/projects/EEPArtifact.png";
+import Project2 from "../assets/projects/project2.jpg";
 const Projects = [
   {
     id: 1,
     title: "Hospital Management System",
     description:
       "A role-based hospital management system for patients, doctors, appointments, and medical records, built with ASP.NET Core MVC, Angular, C#, Entity Framework Core, and SQL Server.",
-    image: "/projects/project1.png",
+    image: Project1,
     tags: ["ASP.NET Core", "Angular", "C#", "SQL Server"],
     // demoUrl: "#",
     githubUrl: "https://github.com/GowriVG/Hospital-Management-System.git",
@@ -17,7 +22,7 @@ const Projects = [
     title: "Azure Resource Health",
     description:
       "A role-based hospital management system for patients, doctors, appointments, and medical records, built with ASP.NET Core MVC, Angular, C#, Entity Framework Core, and SQL Server.",
-    image: "/projects/AzureResourceHealth.png",
+    image: AzureResourceHealth,
     tags: ["ASP.NET Core", "Angular", "C#", "SQL Server"],
     // demoUrl: "#",
     githubUrl: "https://github.com/GowriVG/Hospital-Management-System.git",
@@ -27,7 +32,7 @@ const Projects = [
     title: "LUMI AI Meeting Assistant", // Changed title to be unique
     description:
       "A Microsoft Teams-integrated AI assistant that automates meeting summarization, context-aware Q&A, and work item generation using Azure OpenAI and RAG-powered FastAPI.",
-    image: "/projects/Lumi.png",
+    image: Lumi,
     tags: ["Angular", "FastAPI", "Azure OpenAI", "Azure DevOps"],
     // demoUrl: "#",
     githubUrl: "#",
@@ -37,7 +42,7 @@ const Projects = [
     title: "OpsNexus AI Operational Intelligence Portal",
     description:
       "A full-stack cloud cost governance platform that analyzes Azure resource utilization, automates DevOps work item creation, and visualizes optimization recommendations through interactive Angular dashboards.",
-    image: "/projects/OpsNexus.png",
+    image: OpsNexus,
     imagePosition: "object-center",
     tags: ["Angular", "FastAPI", "Azure DevOps", "Chart.js"],
     // demoUrl: "#",
@@ -48,7 +53,7 @@ const Projects = [
     title: "EEP Artifacts Integration & Runtime Model Generator",
     description:
       "An enterprise-grade Angular and .NET platform that integrates Azure DevOps Artifacts for package management and dynamically generates JSON schemas at runtime using reflection, with an interactive UI for schema exploration and comparison.",
-    image: "/projects/EEPArtifact.png",
+    image: EEPArtifact,
     tags: ["Angular", ".NET", "Azure DevOps", "Swagger"],
     // demoUrl: "#",
     githubUrl: "#",
@@ -58,7 +63,8 @@ const Projects = [
     title: "Inventory Management System",
     description:
       "A Java Swing desktop application for real-time inventory tracking with full CRUD operations, reducing manual errors and improving data accuracy.",
-    image: "/projects/project1.png",
+    //image: InventoryManagement,
+    image: Project1,
     tags: ["Java", "Swing", "SQLite"],
     // demoUrl: "#",
     githubUrl: "https://github.com/GowriVG/Hospital-Management-System.git",
@@ -68,7 +74,8 @@ const Projects = [
     title: "AI-Based Hand Gesture Math Solver",
     description:
       "A real-time AI math solver that interprets mid-air hand gestures using computer vision and solves problems via Gemini 1.5 Flash, with an integrated chatbot for math queries.",
-    image: "/projects/project1.png",
+    //image: MathSolver,
+    image: Project1,
     tags: ["Python", "OpenCV", "Streamlit", "Gemini API"],
     // demoUrl: "#",
     githubUrl: "https://github.com/GowriVG/Hospital-Management-System.git",
@@ -78,7 +85,8 @@ const Projects = [
     title: "Cosmetic Social Media Platform",
     description:
       "A real-time AI math solver that interprets mid-air hand gestures using computer vision and solves problems via Gemini 1.5 Flash, with an integrated chatbot for math queries.",
-    image: "/projects/project2.jpg",
+    //image: CosmeticSocialMedia,
+    image: Project2,
     tags: ["Python", "OpenCV", "Streamlit", "Gemini API"],
     // demoUrl: "#",
     githubUrl: "https://github.com/GowriVG/Hospital-Management-System.git",
