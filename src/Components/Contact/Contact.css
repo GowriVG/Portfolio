@@ -131,7 +131,7 @@
   height: 90%;
   border-radius: 8px;
   transition-duration: 1s;
-  background-color: rgba(0, 0, 0, 0.842);
+  background-color: rgba(18, 15, 23, 0.92);
   background-size: 200%;
 }
 .contact-submit:hover {
@@ -182,6 +182,12 @@
   .contact-right label {
     font-size: 14px;
   }
+  .contact-submit:hover,
+  .contact-submit:active {
+    background-position: right;
+    transform: scale(1.05);
+    transition: 0.2s;
+  }
 }
 .contact-submit[disabled] {
   width: 100%;
@@ -217,3 +223,4 @@
 .dark-confirm-btn:hover {
   background-color: #cfcfcf !important;
 }
+

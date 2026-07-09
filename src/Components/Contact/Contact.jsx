@@ -121,7 +121,7 @@ const Contact = () => {
             placeholder="Enter your message"
             required
           ></textarea>
-          <button type="submit" className="contact-submit">
+          <button type="submit" className="contact-submit" onTouchStart={() => {}}>
             Submit now
           </button>
         </form>

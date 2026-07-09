@@ -50,7 +50,7 @@ export const education = [
       school: "Rajagiri College of Social Sciences",
       date: "June 2024 - March 2026",
       grade: "8.37 CGPA",
-      desc: "I hold a Master of Computer Applications (MCA) from Rajagiri College of Social Sciences, Ernakulam. My academic journey provided me with a robust foundation in software development, data structures, and modern programming paradigms, which I have successfully applied to complex technical projects and problem-solving challenges.",
+      //desc: "I hold a Master of Computer Applications (MCA) from Rajagiri College of Social Sciences, Ernakulam. My academic journey provided me with a robust foundation in software development, data structures, and modern programming paradigms, which I have successfully applied to complex technical projects and problem-solving challenges.",
       degree: "Master of Computer Applications - MCA",
     },
     {
@@ -59,7 +59,7 @@ export const education = [
       school: "NSS College for Women, Neeramankara",
       date: "Nov 2021 - April 2024",
       grade: "8.75 CGPA",
-      desc: "I have completed my Bachelor’s degree in Chemistry from Kerala University, where I studied inorganic, organic, and physical chemistry, and gained practical exposure through laboratory work and an internship in polymer chemistry",
+      //desc: "I have completed my Bachelor’s degree in Chemistry from Kerala University, where I studied inorganic, organic, and physical chemistry, and gained practical exposure through laboratory work and an internship in polymer chemistry",
       degree: "Bachelor of Science - BSC (Chemistry)",
     },
     {
@@ -68,7 +68,7 @@ export const education = [
       school: "FR.Phillips Higher Secondary School, Nellikad",
       date: "March 2021",
       grade: "98%",
-      desc: "I completed my Higher Secondary Education in the Science stream, with a focus on Physics, Chemistry, and Mathematics.",
+      //desc: "I completed my Higher Secondary Education in the Science stream, with a focus on Physics, Chemistry, and Mathematics.",
       degree: "Kerala State Board (XII) - PCM (Physics, Chemistry, Mathematics)",
     },
     {
@@ -77,7 +77,7 @@ export const education = [
       school: "Christ Nagar Senior Secondary School, Thiruvallom",
       date: "March 2019",
       grade: "93%",
-      desc: "I completed my secondary education from Christ Nagar School, under the CBSE board, with a focus on Science and Mathematics.",
+      //desc: "I completed my secondary education from Christ Nagar School, under the CBSE board, with a focus on Science and Mathematics.",
       degree: "CBSE(X), Science",
     },
   ];
