@@ -196,31 +196,146 @@
 }
 /* Dark popup look */
 .dark-popup {
-  width: 390px !important; /* Smaller width */
-  padding: 6px 19px !important; /* Reduced spacing */
+  width: 300px !important;
+  padding: 4px 16px 16px !important;
   border-radius: 12px !important;
-  /* padding: 1px !important; */
-  font-family: "Poppins", sans-serif;
-  border: 1px solid #3a3a3a !important;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #2e2e38 !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8) !important;
 }
 
-/* Title style */
 .dark-title {
-  font-size: 22px !important;
+  font-size: 17px !important;
   font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  color: #e5e5ea !important;
+  padding-top: 0 !important;
+}
+
+/* shrink the icon circle
+.dark-popup .swal2-icon {
+  width: 52px !important;
+  height: 52px !important;
+  margin: 16px auto 10px !important;
+} */
+
+.dark-popup .swal2-html-container {
+  font-size: 13px !important;
+  color: #9999ae !important;
+  margin: 4px 0 16px !important;
+  line-height: 1.5 !important;
 }
 
 /* Confirm button */
 .dark-confirm-btn {
-  color: #141414 !important;
-  background-color: #ffffff !important;
+  border: none !important;
+  padding: 0.45em 1.8em !important;
+  font-size: 13px !important;
+  font-family: "Inter", sans-serif !important;
+  color: rgb(220, 220, 224) !important;
   border-radius: 8px !important;
-  padding: 10px 25px !important;
-  font-weight: 600 !important;
-  transition: 0.2s;
+  background: linear-gradient(225deg, #1e1e24, #2e2e38) !important;
+  box-shadow:
+    -3px 3px 8px #111111,
+    3px -3px 8px #252525 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  transition: background 0.3s ease !important;
 }
 
 .dark-confirm-btn:hover {
-  background-color: #cfcfcf !important;
+  background: #2a2a34 !important;
+  box-shadow:
+    -3px 3px 8px #111111,
+    3px -3px 8px #252525 !important;
 }
 
+.dark-confirm-btn:active {
+  background: #1e1e24 !important;
+  box-shadow:
+    inset -3px 3px 8px #111111,
+    inset 3px -3px 8px #252525 !important;
+}
+
+@media (max-width: 480px) {
+  .dark-popup {
+    width: 78vw !important;
+    max-width: 250px !important;
+    padding: 6px 14px 14px !important;
+    border-radius: 10px !important;
+  }
+
+  .no-default-icon {
+    margin: 12px auto 6px !important;
+  }
+
+  .custom-success-icon {
+    width: 34px !important;
+    height: 34px !important;
+    border: 1.2px solid rgba(200, 200, 216, 0.5) !important;
+  }
+
+  .custom-success-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .custom-success-icon path {
+    stroke-width: 2.2 !important;
+  }
+
+  .dark-title {
+    font-size: 15px !important;
+    margin: 4px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .dark-popup .swal2-html-container {
+    font-size: 11.5px !important;
+    line-height: 1.45 !important;
+    margin: 8px 0 14px !important;
+  }
+
+  .dark-confirm-btn {
+    padding: 0.38em 1.35em !important;
+    font-size: 11px !important;
+    border-radius: 7px !important;
+    letter-spacing: 0.07em !important;
+    border: 1px solid rgba(200, 200, 216, 0.22) !important;
+  }
+
+  .swal2-actions {
+    margin: 0 auto !important;
+  }
+}
+
+.no-default-icon {
+  border: none !important;
+  margin: 14px auto 8px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.custom-success-icon {
+  width: 38px;
+  height: 38px;
+  border: 1.4px solid rgba(200, 200, 216, 0.55);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(200, 200, 216, 0.03);
+  box-shadow: 0 0 14px rgba(200, 200, 216, 0.08);
+}
+
+.custom-success-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.custom-success-icon path {
+  stroke: #c8c8d8;
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

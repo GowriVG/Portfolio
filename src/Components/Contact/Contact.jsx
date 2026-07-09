@@ -36,20 +36,25 @@ const Contact = () => {
 
     if (res.success) {
       Swal.fire({
-        icon: "success",
-        title: "Message Sent!",
-        text: "Thanks for reaching out. I will get back to you soon!",
-        background: "#141414", // Dark background
-        color: "#ffffff", // White text
-        iconColor: "#7C3AED", // Purple tick icon
-        confirmButtonText: "OK",
-        confirmButtonColor: "#ffffff", // White button background
-        customClass: {
-          popup: "dark-popup",
-          title: "dark-title",
-          confirmButton: "dark-confirm-btn",
-        },
-      });
+  title: "Message Submitted",
+  text: "Thank you for reaching out. Your message has been received and I will get back to you shortly.",
+  background: "#1a1a20",
+  color: "#d1d5db",
+  confirmButtonText: "Close",
+  iconHtml: `
+    <div class="custom-success-icon">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M5 12.5L10 17.5L19 7.5" />
+      </svg>
+    </div>
+  `,
+  customClass: {
+    popup: "dark-popup",
+    title: "dark-title",
+    confirmButton: "dark-confirm-btn",
+    icon: "no-default-icon",
+  },
+});
 
       event.target.reset();
     } else {
@@ -121,7 +126,11 @@ const Contact = () => {
             placeholder="Enter your message"
             required
           ></textarea>
-          <button type="submit" className="contact-submit" onTouchStart={() => {}}>
+          <button
+            type="submit"
+            className="contact-submit"
+            onTouchStart={() => {}}
+          >
             Submit now
           </button>
         </form>
