@@ -7,8 +7,8 @@ const heroBtnStyles = `
     --line_color: #c8c8d8;
     position: relative;
     z-index: 0;
-    width: 200px;
-    height: 52px;
+    width: 130px;
+    height: 48px;
     text-decoration: none;
     font-size: 11px;
     font-weight: bold;
@@ -18,6 +18,26 @@ const heroBtnStyles = `
     display: inline-block;
     overflow: hidden;
   }
+    /* Tablet sizes */
+  @media (min-width: 768px) {
+    .hero-btn {
+      width: 140px;
+      height: 48px;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+  }
+  
+  /* Desktop sizes */
+  @media (min-width: 1024px) {
+    .hero-btn {
+      width: 140px;
+      height: 45px;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+  }
+
   .hero-btn__text {
     display: flex;
     justify-content: center;
@@ -27,25 +47,90 @@ const heroBtnStyles = `
     position: relative;
     z-index: 1;
   }
-  .hero-btn::before,.hero-btn::after,.hero-btn__text::before,.hero-btn__text::after {
-    content: "";position: absolute;height: 3px;border-radius: 2px;
-    background: var(--line_color);transition: all 0.5s ease;
-  }
-  .hero-btn::before { top:0;left:54px;width:calc(100% - 56px * 2 - 16px); }
-  .hero-btn::after { top:0;right:54px;width:8px; }
-  .hero-btn__text::before { bottom:0;right:54px;width:calc(100% - 56px * 2 - 16px); }
-  .hero-btn__text::after { bottom:0;left:54px;width:8px; }
-  .hero-btn__line { position:absolute;top:0;width:56px;height:100%;overflow:hidden;z-index:2; }
-  .hero-btn__line::before {
-    content:"";position:absolute;top:0;width:150%;height:100%;
-    box-sizing:border-box;border-radius:300px;border:solid 3px var(--line_color);
-  }
-  .hero-btn__line:nth-child(1),.hero-btn__line:nth-child(1)::before { left:0; }
-  .hero-btn__line:nth-child(2),.hero-btn__line:nth-child(2)::before { right:0; }
-  .hero-btn:hover { letter-spacing:6px; }
-  .hero-btn:hover::before,.hero-btn:hover .hero-btn__text::before { width:8px; }
-  .hero-btn:hover::after,.hero-btn:hover .hero-btn__text::after { width:calc(100% - 56px * 2 - 16px); }
-  
+  .hero-btn::before,
+.hero-btn::after,
+.hero-btn__text::before,
+.hero-btn__text::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line_color);
+  transition: all 0.5s ease;
+}
+
+/* Top long line */
+.hero-btn::before {
+  top: 0;
+  left: 38px;    /* was 46px */
+  width: calc(100% - 38px * 2 - 16px);
+}
+
+/* Top small line */
+.hero-btn::after {
+  top: 0;
+  right: 38px;   /* was 46px */
+  width: 8px;
+}
+
+/* Bottom long line */
+.hero-btn__text::before {
+  bottom: 0;
+  right: 38px;   /* was 46px */
+  width: calc(100% - 38px * 2 - 16px);
+}
+
+/* Bottom small line */
+.hero-btn__text::after {
+  bottom: 0;
+  left: 38px;    /* was 46px */
+  width: 8px;
+}
+
+/* Curved side borders — scaled for 140px button */
+.hero-btn__line {
+  position: absolute;
+  top: 0;
+  width: 42px;   /* was 50px — scaled for 140px width */
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hero-btn__line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 300px;
+  border: solid 3px var(--line_color);
+}
+
+.hero-btn__line:nth-child(1),
+.hero-btn__line:nth-child(1)::before {
+  left: 0;
+}
+
+.hero-btn__line:nth-child(2),
+.hero-btn__line:nth-child(2)::before {
+  right: 0;
+}
+
+.hero-btn:hover {
+  letter-spacing: 3px;   /* was 4px — fits 140px */
+}
+
+.hero-btn:hover::before,
+.hero-btn:hover .hero-btn__text::before {
+  width: 8px;
+}
+
+.hero-btn:hover::after,
+.hero-btn:hover .hero-btn__text::after {
+  width: calc(100% - 38px * 2 - 16px);
+}
   .hero-btn__shimmer {
   position: absolute;
   inset: 3px;
@@ -65,13 +150,13 @@ const heroBtnStyles = `
     rgba(255,255,255,0.35),
     transparent
   );
-  transform: skewX(-13deg) translateX(-50px);
-  animation: hero-shimmer-auto 2.8s ease-in-out infinite;
+  transform: skewX(-13deg) translateX(-60px);
+  animation: hero-shimmer-auto 3s linear infinite; /* linear so keyframes control speed */
 }
   @keyframes hero-shimmer-auto {
-    0%   { transform: skewX(-13deg) translateX(-50px); }
-    30%  { transform: skewX(-13deg) translateX(230px); }
-    100% { transform: skewX(-13deg) translateX(230px); }
+    0%   { transform: skewX(-13deg) translateX(-60px); }  /* outside left */
+    5%   { transform: skewX(-13deg) translateX(0px); }    /* fast — just entered */
+    100% { transform: skewX(-13deg) translateX(220px); }  /* slow across full button */
   }
 `;
 
