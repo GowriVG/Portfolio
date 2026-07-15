@@ -1,8 +1,13 @@
 import React from "react";
 import ScrollVelocity from "./ScrollVelocity/ScrollVelocity.jsx";
-
+import CLangIcon from "../assets/C lang.png";
+import CppLangIcon from "../assets/cpp-lang.png";
+import CSharpIcon from "../assets/csharp-lang.png";
+import OpenCVIcon from "../assets/opencv-lang.png";
+import PythonIcon from "../assets/python-lang.png";
+import AzureOpenAIIcon from "../assets/azure-openai.png";
 // --- SAFE ICON IMPORTS ---
-// 1. FontAwesome (Stable & Safe)
+// 1. FontAwesome
 import {
   FaHtml5,
   FaCss3Alt,
@@ -10,20 +15,17 @@ import {
   FaReact,
   FaBootstrap,
   FaNodeJs,
-  FaPython,
   FaJava,
   FaDocker,
   FaGitAlt,
   FaGithub,
   FaCode,
   FaChartBar,
-  FaEye,
   FaProjectDiagram,
   FaCogs,
-  FaCloud,
 } from "react-icons/fa";
 
-// 2. DevIcons (Good for languages/databases)
+// 2. DevIcons
 import {
   DiMysql,
   DiMsqlServer,
@@ -33,21 +35,30 @@ import {
   DiCodeBadge,
 } from "react-icons/di";
 
-// 3. Simple Icons (Brand specific)
-import { SiTailwindcss, SiAngular, SiDotnet, SiVite } from "react-icons/si";
+// 3. Simple Icons
+import {
+  SiTailwindcss,
+  SiAngular,
+  SiDotnet,
+  SiVite,
+  SiStreamlit,
+} from "react-icons/si";
+import { VscAzure, VscAzureDevops } from "react-icons/vsc";
+import {
+  SiPostman,
+  SiSwagger,
+  SiFastapi,
+  SiChartdotjs,
+  SiGooglegemini,
+} from "react-icons/si";
 
-import { SiPostman, SiSwagger } from "react-icons/si";
-
-// Reusable Component for consistent style
 const TechCard = ({ Icon, name, color }) => {
   return (
-    <div className="flex flex-col items-center justify-center mx-5 group cursor-pointer select-none">
-      {/* Icon Container */}
-      <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
-        <Icon className={`text-4xl ${color} drop-shadow-md`} />
+    <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+      <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
+        <Icon className={`text-2xl md:text-4xl ${color} drop-shadow-md`} />
       </div>
-      {/* Text Underneath */}
-      <span className="text-gray-400 font-medium text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+      <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
         {name}
       </span>
     </div>
@@ -93,7 +104,7 @@ const Technologies = () => {
           <TechCard Icon={SiAngular} name="Angular" color="text-red-600" />
           <TechCard Icon={SiDotnet} name=".NET Core" color="text-purple-500" />
           <TechCard Icon={DiLaravel} name="Laravel" color="text-red-600" />
-          <TechCard Icon={FaChartBar} name="Streamlit" color="text-red-500" />
+          <TechCard Icon={SiStreamlit} name="Streamlit" color="text-red-500" />
 
           {/* Styling */}
           <TechCard
@@ -106,6 +117,11 @@ const Technologies = () => {
             name="Bootstrap"
             color="text-purple-600"
           />
+          {/* Data Viz */}
+          <TechCard Icon={SiChartdotjs} name="Chart.js" color="text-pink-500" />
+
+          {/* API Frameworks */}
+          <TechCard Icon={SiFastapi} name="FastAPI" color="text-teal-400" />
 
           {/* Web Backends */}
           <TechCard Icon={DiPhp} name="PHP" color="text-indigo-400" />
@@ -117,10 +133,44 @@ const Technologies = () => {
       <div className="mb-8">
         <ScrollVelocity velocity={-35} className="flex items-center">
           {/* Core Languages */}
-          <TechCard Icon={FaPython} name="Python" color="text-yellow-500" />
+
+          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+            <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
+              <img src={PythonIcon} alt="Python" className="w-9 h-9" />
+            </div>
+            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+              Python
+            </span>
+          </div>
+
           <TechCard Icon={FaJava} name="Java" color="text-orange-600" />
-          <TechCard Icon={FaCode} name="C" color="text-blue-400" />
-          <TechCard Icon={DiCodeBadge} name="C++" color="text-blue-600" />
+          {/* C Language - custom SVG */}
+          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+            <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
+              <img src={CLangIcon} alt="C" className="w-9 h-9" />
+            </div>
+            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+              C
+            </span>
+          </div>
+
+          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+            <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
+              <img src={CppLangIcon} alt="C++" className="w-9 h-9" />
+            </div>
+            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+              C++
+            </span>
+          </div>
+
+          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+            <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
+              <img src={CSharpIcon} alt="C#" className="w-8 h-9" />
+            </div>
+            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+              C#
+            </span>
+          </div>
           {/* Databases */}
           <TechCard
             Icon={DiMsqlServer}
@@ -130,7 +180,14 @@ const Technologies = () => {
           <TechCard Icon={DiMysql} name="MySQL" color="text-blue-400" />
 
           {/* AI / Tools */}
-          <TechCard Icon={FaEye} name="OpenCV" color="text-green-400" />
+          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+            <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
+              <img src={OpenCVIcon} alt="OpenCV" className="w-9 h-9" />
+            </div>
+            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+              OpenCV
+            </span>
+          </div>
           <TechCard Icon={FaGitAlt} name="Git" color="text-orange-600" />
           <TechCard Icon={FaGithub} name="GitHub" color="text-white" />
           <TechCard Icon={FaDocker} name="Docker" color="text-blue-500" />
@@ -142,8 +199,24 @@ const Technologies = () => {
           <TechCard Icon={SiVite} name="Vite" color="text-purple-400" />
 
           {/* Cloud & DevOps */}
-          <TechCard Icon={FaCloud} name="Azure" color="text-blue-500" />
-          <TechCard Icon={FaCogs} name="Azure DevOps" color="text-blue-400" />
+          <TechCard Icon={VscAzure} name="Azure" color="text-blue-500" />
+          <TechCard
+            Icon={VscAzureDevops}
+            name="Azure DevOps"
+            color="text-blue-400"
+          />
+          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+            <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
+              <img
+                src={AzureOpenAIIcon}
+                alt="Azure OpenAI"
+                className="w-9 h-9"
+              />
+            </div>
+            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+              Azure OpenAI
+            </span>
+          </div>
 
           {/* API Tools */}
           <TechCard
@@ -153,6 +226,7 @@ const Technologies = () => {
           />
           <TechCard Icon={SiSwagger} name="Swagger" color="text-green-500" />
           <TechCard Icon={SiPostman} name="Postman" color="text-orange-500" />
+          <TechCard Icon={SiGooglegemini} name="Gemini" color="text-blue-400" />
         </ScrollVelocity>
       </div>
     </div>
