@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 //nav items array to avoid repeating code
@@ -11,16 +11,18 @@ const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Technologies", href: "#technologies" },
-  { name: "Education", href: "#education" },
-  { name: "Certificates", href: "#certificates" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#project" },
+  { name: "Education", href: "#education" },
+  { name: "Certificates", href: "#certificates" },
   { name: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("Home");
+  const navRef = useRef(null);
+  const indicatorRef = useRef(null);
 
   // Responsive logic for nav items
   const socialLinks = [
@@ -46,32 +48,86 @@ const Navbar = () => {
     },
   ];
 
+  const moveIndicator = (el) => {
+    const nav = navRef.current;
+    const indicator = indicatorRef.current;
+    if (!el || !nav || !indicator) return;
+    const navRect = nav.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    indicator.style.left = `${elRect.left - navRect.left}px`;
+    indicator.style.width = `${elRect.width}px`;
+  };
+
+  // 1. Move indicator when activeMenu changes
+  useEffect(() => {
+    const activeEl = navRef.current?.querySelector(".active");
+    if (activeEl) moveIndicator(activeEl);
+  }, [activeMenu]);
+
+  // 2. Update activeMenu based on which section is in view
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.href.replace("#", ""));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const matched = navItems.find(
+              (item) => item.href === `#${entry.target.id}`,
+            );
+            if (matched) setActiveMenu(matched.name);
+          }
+        });
+      },
+      {
+        rootMargin: "-40% 0px -55% 0px", // triggers when section is ~middle of screen
+        threshold: 0,
+      },
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <nav className="flex items-center justify-between py-6">
       {/* Logo */}
       <div className="flex flex-shrink-0 items-center">
         <a href="/" aria-label="Home">
-          {/* <img
-            src={logo}
-            className="mx-10"
-            width={150}
-            height={80}
-            alt="Logo"
-          /> */}
           <img src={logo} className="mr-4" width={150} height={70} alt="Logo" />
         </a>
       </div>
 
       {/* Desktop nav */}
-      {/* <ul className="hidden lg:flex gap-6 text-lg font-medium text-white"> */}
-      <ul className="hidden lg:flex gap-3 xl:gap-6 text-sm xl:text-base font-medium text-white">
+      <ul
+        ref={navRef}
+        className="nav-list-desktop hidden lg:flex gap-3 xl:gap-6 text-sm xl:text-base font-medium text-white"
+        onMouseLeave={() => {
+          const activeEl = navRef.current?.querySelector(".active");
+          if (activeEl) moveIndicator(activeEl);
+        }}
+      >
+        <li style={{ position: "static", padding: 0, listStyle: "none" }}>
+          <div ref={indicatorRef} className="nav-indicator" />
+        </li>
         {navItems.map((item, key) => (
-          <li key={key} className="flex flex-col items-center">
+          <li
+            key={key}
+            onMouseEnter={(e) =>
+              moveIndicator(e.currentTarget.querySelector("a"))
+            }
+          >
             <a
               href={item.href}
-              onClick={() => setActiveMenu(item.name)}
-              // We add 'nav-link' for the line logic, and 'active' if selected
-              className={`nav-link hover:text-blue-400 ${activeMenu === item.name ? "active" : ""}`}
+              onClick={(e) => {
+                setActiveMenu(item.name);
+                moveIndicator(e.currentTarget);
+              }}
+              className={`nav-link ${activeMenu === item.name ? "active" : ""}`}
             >
               {item.name}
             </a>

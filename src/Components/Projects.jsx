@@ -95,7 +95,7 @@ const Projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-2 px-4 relative">
+    <section id="project" className="py-2 px-4 relative">
       <div className="w-full max-w-7xl mx-auto">
         <h2 className="text-center tracking-tight text-4xl text-white" style={{
             fontFamily: '"Commissioner", sans-serif',
