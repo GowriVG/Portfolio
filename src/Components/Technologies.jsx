@@ -136,7 +136,7 @@ const Technologies = () => {
 
           <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
-              <img src={PythonIcon} alt="Python" className="w-9 h-9" />
+              <img src={PythonIcon} alt="Python" className="w-6 h-6 md:w-9 md:h-9" />
             </div>
             <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
               Python
@@ -147,7 +147,7 @@ const Technologies = () => {
           {/* C Language - custom SVG */}
           <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
-              <img src={CLangIcon} alt="C" className="w-9 h-9" />
+              <img src={CLangIcon} alt="C" className="w-9 h-9 md:w-9 md:h-9" />
             </div>
             <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
               C
@@ -156,7 +156,7 @@ const Technologies = () => {
 
           <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
-              <img src={CppLangIcon} alt="C++" className="w-9 h-9" />
+              <img src={CppLangIcon} alt="C++" className="w-9 h-9 md:w-9 md:h-9" />
             </div>
             <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
               C++
@@ -165,7 +165,7 @@ const Technologies = () => {
 
           <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
-              <img src={CSharpIcon} alt="C#" className="w-8 h-9" />
+              <img src={CSharpIcon} alt="C#" className="w-8 h-9 md:w-9 md:h-9" />
             </div>
             <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
               C#
@@ -182,7 +182,7 @@ const Technologies = () => {
           {/* AI / Tools */}
           <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
-              <img src={OpenCVIcon} alt="OpenCV" className="w-9 h-9" />
+              <img src={OpenCVIcon} alt="OpenCV" className="w-9 h-9 md:w-9 md:h-9" />
             </div>
             <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
               OpenCV
@@ -210,7 +210,7 @@ const Technologies = () => {
               <img
                 src={AzureOpenAIIcon}
                 alt="Azure OpenAI"
-                className="w-9 h-9"
+                className="w-9 h-9 md:w-9 md:h-9"
               />
             </div>
             <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
