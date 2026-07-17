@@ -52,13 +52,28 @@ import {
   SiGooglegemini,
 } from "react-icons/si";
 
+// const TechCard = ({ Icon, name, color }) => {
+//   return (
+//     <div className="w-[86px] md:w-[96px] flex-shrink-0 flex flex-col items-center justify-center group cursor-pointer select-none">
+//       <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
+//         <Icon className={`text-2xl md:text-4xl ${color} drop-shadow-md`} />
+//       </div>
+
+//       <span className="w-full text-center text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+//         {name}
+//       </span>
+//     </div>
+//   );
+// };
+
 const TechCard = ({ Icon, name, color }) => {
   return (
-    <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+    <div className="w-[86px] md:w-[96px] flex-shrink-0 flex flex-col items-center justify-center group cursor-pointer select-none">
       <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
         <Icon className={`text-2xl md:text-4xl ${color} drop-shadow-md`} />
       </div>
-      <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+
+      <span className="w-full text-center text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
         {name}
       </span>
     </div>
@@ -67,27 +82,22 @@ const TechCard = ({ Icon, name, color }) => {
 
 const Technologies = () => {
   return (
-    <div id="technologies" className="text-center mb-4">
-      <h2
-        className="text-center tracking-tigh text-4xl text-white"
-        style={{
-          fontFamily: '"Commissioner", sans-serif',
-          fontWeight: 400,
-          letterSpacing: "0.02em",
-        }}
-      >
+    <section
+      id="technologies"
+      //className="relative px-4 py-8 sm:px-6 sm:py-8 md:py-8 lg:px-4 lg:py-5"
+      className="relative px-4 pt-10 pb-6 sm:px-6 sm:pt-10 md:pt-12 md:pb-8 lg:px-4"
+    >
+      <h2 className="text-center tracking-tight text-2xl md:text-3xl lg:text-4xl text-white mb-0">
         Technologies
       </h2>
       <div
+        className="w-44 md:w-34 lg:w-52 h-[2px] mx-auto mt-2 rounded-sm"
         style={{
-          width: "210px",
-          height: "2px",
-          margin: "14px auto 0",
           background:
             "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
-          borderRadius: "2px",
           boxShadow:
             "0 0 10px rgba(180, 180, 200, 0.5), 0 0 24px rgba(160, 160, 190, 0.25)",
+          borderRadius: "2px",
         }}
       />
 
@@ -134,40 +144,59 @@ const Technologies = () => {
         <ScrollVelocity velocity={-35} className="flex items-center">
           {/* Core Languages */}
 
-          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+          {/* <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none"> */}
+          <div className="w-[86px] md:w-[96px] flex-shrink-0 flex flex-col items-center justify-center group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
-              <img src={PythonIcon} alt="Python" className="w-6 h-6 md:w-9 md:h-9" />
+              <img
+                src={PythonIcon}
+                alt="Python"
+                className="w-6 h-6 md:w-9 md:h-9"
+              />
             </div>
-            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+            {/* <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300"> */}
+            <span className="w-full text-center text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
               Python
             </span>
           </div>
 
           <TechCard Icon={FaJava} name="Java" color="text-orange-600" />
-          {/* C Language - custom SVG */}
-          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+          {/* <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none"> */}
+          <div className="w-[86px] md:w-[96px] flex-shrink-0 flex flex-col items-center justify-center group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
               <img src={CLangIcon} alt="C" className="w-9 h-9 md:w-9 md:h-9" />
             </div>
-            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+            {/* <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300"> */}
+            <span className="w-full text-center text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
               C
             </span>
           </div>
 
-          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+          {/* <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none"> */}
+          <div className="w-[86px] md:w-[96px] flex-shrink-0 flex flex-col items-center justify-center group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
-              <img src={CppLangIcon} alt="C++" className="w-9 h-9 md:w-9 md:h-9" />
+              <img
+                src={CppLangIcon}
+                alt="C++"
+                className="w-9 h-9 md:w-9 md:h-9"
+              />
             </div>
-            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+            {/* <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300"> */}
+            <span className="w-full text-center text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
               C++
             </span>
           </div>
 
-          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+          {/* <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none"> */}
+          <div className="w-[86px] md:w-[96px] flex-shrink-0 flex flex-col items-center justify-center group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
-              <img src={CSharpIcon} alt="C#" className="w-8 h-9 md:w-9 md:h-9" />
+              <img
+                src={CSharpIcon}
+                alt="C#"
+                className="w-8 h-9 md:w-9 md:h-9"
+              />
             </div>
-            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+            {/* <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300"> */}
+            <span className="w-full text-center text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
               C#
             </span>
           </div>
@@ -180,11 +209,17 @@ const Technologies = () => {
           <TechCard Icon={DiMysql} name="MySQL" color="text-blue-400" />
 
           {/* AI / Tools */}
-          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+          {/* <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none"> */}
+          <div className="w-[86px] md:w-[96px] flex-shrink-0 flex flex-col items-center justify-center group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
-              <img src={OpenCVIcon} alt="OpenCV" className="w-9 h-9 md:w-9 md:h-9" />
+              <img
+                src={OpenCVIcon}
+                alt="OpenCV"
+                className="w-9 h-9 md:w-9 md:h-9"
+              />
             </div>
-            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+            {/* <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300"> */}
+            <span className="w-full text-center text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
               OpenCV
             </span>
           </div>
@@ -200,21 +235,17 @@ const Technologies = () => {
 
           {/* Cloud & DevOps */}
           <TechCard Icon={VscAzure} name="Azure" color="text-blue-500" />
-          <TechCard
-            Icon={VscAzureDevops}
-            name="Azure DevOps"
-            color="text-blue-400"
-          />
-          <div className="flex flex-col items-center justify-center mx-3 md:mx-5 group cursor-pointer select-none">
+          <TechCard Icon={VscAzureDevops} name="DevOps" color="text-blue-400" />
+          <div className="w-[86px] md:w-[96px] flex-shrink-0 flex flex-col items-center justify-center group cursor-pointer select-none">
             <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center mb-2 md:mb-3 shadow-lg group-hover:border-[#9999ae]/50 group-hover:bg-white/10 transition-all duration-300">
               <img
                 src={AzureOpenAIIcon}
                 alt="Azure OpenAI"
-                className="w-9 h-9 md:w-9 md:h-9"
+                className="w-8 h-8 md:w-10 md:h-10"
               />
             </div>
-            <span className="text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
-              Azure OpenAI
+            <span className="w-full text-center text-gray-400 font-medium text-xs md:text-sm tracking-wide group-hover:text-white transition-colors duration-300">
+              OpenAI
             </span>
           </div>
 
@@ -229,7 +260,7 @@ const Technologies = () => {
           <TechCard Icon={SiGooglegemini} name="Gemini" color="text-blue-400" />
         </ScrollVelocity>
       </div>
-    </div>
+    </section>
   );
 };
 

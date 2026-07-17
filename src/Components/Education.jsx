@@ -28,38 +28,29 @@ const Education = () => {
     return () => observers.forEach((obs) => obs && obs.disconnect());
   }, []);
 
-  // Layout constants (all in px)
-  // Container: 360px tall. Line at 180px. Node h=56px → top=152px, bottom=208px.
-  // Above: stem top=128px (24px above node top). Card bottom edge at 128px → bottom=232px.
-  // Below: stem top=208px (node bottom). Card top=232px.
   const LINE = 180;
-  const NODE_TOP = LINE - 28; // 152 — node center on line
-  const NODE_BTM = NODE_TOP + 56; // 208
+  const NODE_TOP = LINE - 28;
+  const NODE_BTM = NODE_TOP + 56;
   const STEM_H = 24;
-  const ABOVE_STEM_TOP = NODE_TOP - STEM_H; // 128
-  const BELOW_STEM_TOP = NODE_BTM; // 208
-  const CARD_BOUNDARY = NODE_TOP - STEM_H; // 128 from top = 232 from bottom (in 360px container)
+  const ABOVE_STEM_TOP = NODE_TOP - STEM_H;
+  const BELOW_STEM_TOP = NODE_BTM;
+  const CARD_BOUNDARY = NODE_TOP - STEM_H;
   const CONTAINER_H = 360;
 
   return (
-    <section id="education" className="py-16 relative">
+    <section
+      id="education"
+      // className="relative px-4 py-8 sm:px-6 sm:py-8 md:py-12 lg:px-4 lg:py-5"
+      className="relative px-4 py-8 sm:px-6 sm:py-8 md:py-8 lg:px-4 lg:py-5"
+    >
       {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2
-          className="text-center tracking-tight text-4xl text-white"
-          style={{
-            fontFamily: '"Commissioner", sans-serif',
-            fontWeight: 500,
-            letterSpacing: "0.02em",
-          }}
-        >
+      <div className="text-center mb-4 md:mb-6 lg:mb-6">
+        <h2 className="text-center tracking-tight text-2xl md:text-3xl lg:text-4xl text-white mb-0">
           Education
         </h2>
         <div
+          className="w-28 md:w-32 lg:w-40 h-[2px] mx-auto mt-2 rounded-sm"
           style={{
-            width: "160px",
-            height: "2px",
-            margin: "14px auto 0",
             background:
               "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
             borderRadius: "2px",

@@ -23,24 +23,18 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" className="py-2 px-4 relative">
+    <section
+      id="experience"
+      className="relative px-4 pt-8 pb-2 sm:px-6 sm:pt-8 sm:pb-2 lg:px-4 lg:pt-5 lg:pb-0"
+    >
       {/* Section Title */}
       <div className="text-center mb-8">
-        <h2
-          className="text-center tracking-tight text-4xl text-white"
-          style={{
-            fontFamily: '"Commissioner", sans-serif',
-            fontWeight: 400,
-            letterSpacing: "0.02em",
-          }}
-        >
+        <h2 className="text-center tracking-tight text-2xl md:text-3xl lg:text-4xl text-white mb-0">
           Experience
         </h2>
         <div
+          className="w-34 md:w-32 lg:w-50 h-[2px] mx-auto mt-2 rounded-sm"
           style={{
-            width: "210px",
-            height: "2px",
-            margin: "14px auto 0",
             background:
               "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
             borderRadius: "2px",

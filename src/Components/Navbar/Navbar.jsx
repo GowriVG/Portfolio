@@ -80,7 +80,7 @@ const Navbar = () => {
         });
       },
       {
-        rootMargin: "-40% 0px -55% 0px", // triggers when section is ~middle of screen
+        rootMargin: "-40% 0px -55% 0px",
         threshold: 0,
       },
     );

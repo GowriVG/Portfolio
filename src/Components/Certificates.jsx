@@ -50,7 +50,7 @@ const certificates = [
     year: "2025",
     desc: "Built production-ready REST APIs using ASP.NET Core, Entity Framework, JWT auth, and Swagger.",
     link: "https://drive.google.com/file/d/1xo99ItwCXn0WtOgPlgErQUGKipki_giy/view?usp=sharing",
-  }
+  },
 ];
 
 function wrapText(text, maxChars) {
@@ -91,7 +91,7 @@ function createCertCard(cert) {
   const nameLines = wrapName(cert.name, 20);
   const descLines = wrapText(cert.desc, 36);
   const nameY = 80;
-  const nameLineHeight = 42; 
+  const nameLineHeight = 42;
   const dividerY = nameY + 2 * nameLineHeight + 28;
   const certifierY = dividerY + 46;
   const yearY = certifierY + 36;
@@ -153,54 +153,83 @@ const galleryItems = certificates.map((cert) => ({
 
 const CertificatesSection = () => {
   return (
-    <section id="certificates" className="pt-12 pb-0 px-4 sm:px-8" style={{ position: "relative" }}>
+    <section
+      id="certificates"
+      className="relative px-4 py-8 sm:px-6 sm:py-8 md:py-4 lg:px-4 lg:py-5"
+    >
       <div className="text-center mb-4">
-        <h2 className="text-center tracking-tight text-4xl text-white" style={{ fontFamily: '"Commissioner", sans-serif', fontWeight: 500, letterSpacing: '0.02em'}}>
+        <h2 className="text-center tracking-tight text-2xl md:text-3xl lg:text-4xl text-white mb-0">
           Certificates & Workshops
         </h2>
-        <div style={{
-          width: '350px',
-          height: '2px',
-          margin: '14px auto 0',
-          background: 'linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)',
-          borderRadius: '2px',
-          boxShadow: '0 0 10px rgba(180, 180, 200, 0.5), 0 0 24px rgba(160, 160, 190, 0.25)',
-        }}></div>
+        <div
+          className="w-78 md:w-78 lg:w-98 h-[2px] mx-auto mt-2 rounded-sm"
+          style={{
+            background:
+              "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
+            borderRadius: "2px",
+            boxShadow:
+              "0 0 10px rgba(180, 180, 200, 0.5), 0 0 24px rgba(160, 160, 190, 0.25)",
+          }}
+        ></div>
         <p className="text-center text-gray-400 mt-4 max-w-2xl mx-auto">
           Here are some of the certifications and workshops I have successfully
           completed.
         </p>
       </div>
-{/* Left arrow */}
-<div style={{
-  position: "absolute", left: "-3px", top: "60%", transform: "translateY(-50%)",
-  zIndex: 10, color: "rgba(200,200,220,0.6)", fontSize: "28px",
-  pointerEvents: "none", userSelect: "none", lineHeight: 1,
-  textShadow: "0 0 12px rgba(180,180,210,0.7)"
-}}>‹</div>
+      {/* Left arrow */}
+      <div
+        style={{
+          position: "absolute",
+          left: "-3px",
+          top: "60%",
+          transform: "translateY(-50%)",
+          zIndex: 10,
+          color: "rgba(200,200,220,0.6)",
+          fontSize: "28px",
+          pointerEvents: "none",
+          userSelect: "none",
+          lineHeight: 1,
+          textShadow: "0 0 12px rgba(180,180,210,0.7)",
+        }}
+      >
+        ‹
+      </div>
 
-<div style={{ height: "360px", overflow: "hidden", marginTop: "10px" }}>
-  {/* inner div shifts canvas up to cut top empty space */}
-  <div style={{ height: "500px", position: "relative", marginTop: "-80px" }}>
-    <CircularGallery
-      items={galleryItems}
-      bend={0}
-      textColor="#ffffff"
-      borderRadius={0.06}
-      scrollSpeed={2.5}
-      scrollEase={0.05}
-      font="bold 1px sans-serif"
-    />
-  </div>
-</div>
+      <div style={{ height: "360px", overflow: "hidden", marginTop: "10px" }}>
+        {/* inner div shifts canvas up to cut top empty space */}
+        <div
+          style={{ height: "500px", position: "relative", marginTop: "-80px" }}
+        >
+          <CircularGallery
+            items={galleryItems}
+            bend={0}
+            textColor="#ffffff"
+            borderRadius={0.06}
+            scrollSpeed={2.5}
+            scrollEase={0.05}
+            font="bold 1px sans-serif"
+          />
+        </div>
+      </div>
 
-{/* Right arrow */}
-<div style={{
-  position: "absolute", right: "-3px", top: "60%", transform: "translateY(-50%)",
-  zIndex: 10, color: "rgba(200,200,220,0.6)", fontSize: "28px",
-  pointerEvents: "none", userSelect: "none", lineHeight: 1,
-  textShadow: "0 0 12px rgba(180,180,210,0.7)"
-}}>›</div>
+      {/* Right arrow */}
+      <div
+        style={{
+          position: "absolute",
+          right: "-3px",
+          top: "60%",
+          transform: "translateY(-50%)",
+          zIndex: 10,
+          color: "rgba(200,200,220,0.6)",
+          fontSize: "28px",
+          pointerEvents: "none",
+          userSelect: "none",
+          lineHeight: 1,
+          textShadow: "0 0 12px rgba(180,180,210,0.7)",
+        }}
+      >
+        ›
+      </div>
     </section>
   );
 };

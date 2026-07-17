@@ -29,7 +29,7 @@ const Projects = [
   },
   {
     id: 3,
-    title: "LUMI AI Meeting Assistant", // Changed title to be unique
+    title: "LUMI AI Meeting Assistant",
     description:
       "A Microsoft Teams-integrated AI assistant that automates meeting summarization, context-aware Q&A, and work item generation using Azure OpenAI and RAG-powered FastAPI.",
     image: Lumi,
@@ -95,18 +95,17 @@ const Projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="project" className="py-2 px-4 relative">
+    <section
+      id="projects"
+      className="relative px-4 pt-2 pb-5 sm:px-6 sm:pt-4 sm:pb-3 md:pt-4 md:pb-8 lg:px-2 lg:pt-2 lg:pb-4"
+    >
       <div className="w-full max-w-7xl mx-auto">
-        <h2 className="text-center tracking-tight text-4xl text-white" style={{
-            fontFamily: '"Commissioner", sans-serif',
-            fontWeight: 400,
-            letterSpacing: "0.02em",
-          }}>Projects</h2>
+        <h2 className="text-center tracking-tight text-2xl md:text-3xl lg:text-4xl text-white mb-0">
+          Projects
+        </h2>
         <div
+          className="w-28 md:w-32 lg:w-40 h-[2px] mx-auto mt-2 rounded-sm"
           style={{
-            width: "180px",
-            height: "2px",
-            margin: "14px auto 0",
             background:
               "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
             borderRadius: "2px",
@@ -115,8 +114,9 @@ export const ProjectsSection = () => {
           }}
         />
         <p className="text-center py-3 text-gray-400 mb-4 max-w-2xl mx-auto">
-          Here are some of my recent projects. Each project was carefully
-          crafted with attention to detail, performance, and user experience.
+          Explore the projects I’ve built, where I combine technical skills with
+          a passion for creating efficient, reliable, and user-friendly
+          applications.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

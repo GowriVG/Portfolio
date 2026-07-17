@@ -1,4 +1,11 @@
-export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 5 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
+//About Me Section Text
+export const aboutMeText = `I am a Software Developer with a Master of Computer Applications (MCA) from Rajagiri College of Social Sciences and a Bachelor's degree in Chemistry from Kerala University. My academic journey from science to software development has strengthened my analytical thinking, problem-solving, and ability to adapt to new technologies.
+
+My technical expertise includes C#, .NET, ASP.NET Core, Angular, Java, Python, C/C++, JavaScript, HTML, CSS, SQL Server, and MySQL. I have a strong interest in building scalable applications and continuously expanding my knowledge in cloud technologies, DevOps, and modern software engineering practices.
+
+During my Angular & .NET Development internship at H&R Block (India) Pvt. Ltd., I gained hands-on experience in full-stack application development, collaborating on enterprise-level solutions using Angular, .NET, and SQL Server. Alongside my internship, I have developed several academic and personal projects that strengthened my understanding of full-stack development, database design, and AI-powered applications.
+
+I am passionate about creating reliable, user-focused software and enjoy solving real-world problems through technology. As I begin my professional journey, I look forward to contributing to innovative teams while continuing to grow in software engineering, cloud computing, and DevOps.`;
 
 // Experience Section Logo's
 import HRBlockLogo from '../assets/company_logo/HR block.png';
