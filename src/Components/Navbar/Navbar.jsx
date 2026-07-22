@@ -151,42 +151,55 @@ const Navbar = () => {
         className="flex lg:hidden p-2 text-white z-50"
         aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
       >
-        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        {/* {isMenuOpen ? <X size={24} /> : <Menu size={24} />} */}
+         <Menu size={24} />
       </button>
 
-      {/* Hamburger menu overlay: visible on lg and below */}
-      <div
-        className={`fixed inset-0 bg-black/90 z-40 flex flex-col items-center justify-center transition-all duration-300 lg:hidden
-        ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+      {/* Backdrop */}
+<div
+  className={`fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300
+  ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+  onClick={() => setIsMenuOpen(false)}
+/>
+
+{/* Slide-in drawer */}
+<div
+  className={`fixed top-0 right-0 h-full w-64 bg-[#0e0c14] border-l border-white/10 z-50 flex flex-col py-8 px-6 lg:hidden
+  transition-transform duration-300 ease-in-out
+  ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+>
+  <button
+    onClick={() => setIsMenuOpen(false)}
+    className="self-end mb-8 text-white/60 hover:text-white transition-colors"
+  >
+    <X size={20} />
+  </button>
+
+  <div className="flex flex-col gap-1">
+    {navItems.map((item, key) => (
+      <a
+        key={key}
+        href={item.href}
+        className={`px-3 py-2.5 rounded-lg text-sm font-medium tracking-wide transition-colors duration-200
+          ${activeMenu === item.name
+            ? "text-white bg-white/10"
+            : "text-gray-400 hover:text-white hover:bg-white/5"}`}
+        onClick={() => { setIsMenuOpen(false); setActiveMenu(item.name); }}
       >
-        <div className="flex flex-col space-y-8 text-xl text-white">
-          {/* All nav items in hamburger menu on md and below */}
-          {navItems.map((item, key) => (
-            <a
-              key={key}
-              href={item.href}
-              className="hover:text-blue-400 transition-colors duration-300"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.name}
-            </a>
-          ))}
-          {/* Social Links in hamburger menu */}
-          <div className="flex items-center justify-center gap-4 text-2xl mt-8">
-            {socialLinks.map((link, idx) => (
-              <a
-                key={idx}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-              >
-                {link.icon}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+        {item.name}
+      </a>
+    ))}
+  </div>
+
+  <div className="mt-auto flex items-center gap-4 text-lg text-gray-400">
+    {socialLinks.map((link, idx) => (
+      <a key={idx} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}
+        className="hover:text-white transition-colors">
+        {link.icon}
+      </a>
+    ))}
+  </div>
+</div>
 
       {/* Social Links - visible only on md and above */}
       <div className="m-8 hidden lg:flex items-center justify-center gap-3 text-xl">
