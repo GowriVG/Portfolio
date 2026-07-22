@@ -5,7 +5,8 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="row target-section relative z-20 px-4 md:px-6 h-auto pt-16 md:pt-1"
+      //className="row target-section relative z-20 px-4 md:px-6 h-auto pt-16 md:pt-1"
+      className="relative px-4 pt-2 pb-3 sm:px-6 sm:pt-2 sm:pb-3 md:pt-2 md:pb-2 lg:px-2 lg:pt-2 lg:pb-2"
       data-parallax="scroll"
     >
       {/* Heading outside ScrollReveal */}

@@ -36,25 +36,25 @@ const Contact = () => {
 
     if (res.success) {
       Swal.fire({
-  title: "Message Submitted",
-  text: "Thank you for reaching out. Your message has been received and I will get back to you shortly.",
-  background: "#1a1a20",
-  color: "#d1d5db",
-  confirmButtonText: "Close",
-  iconHtml: `
+        title: "Message Submitted",
+        text: "Thank you for reaching out. Your message has been received and I will get back to you shortly.",
+        background: "#1a1a20",
+        color: "#d1d5db",
+        confirmButtonText: "Close",
+        iconHtml: `
     <div class="custom-success-icon">
       <svg viewBox="0 0 24 24" fill="none">
         <path d="M5 12.5L10 17.5L19 7.5" />
       </svg>
     </div>
   `,
-  customClass: {
-    popup: "dark-popup",
-    title: "dark-title",
-    confirmButton: "dark-confirm-btn",
-    icon: "no-default-icon",
-  },
-});
+        customClass: {
+          popup: "dark-popup",
+          title: "dark-title",
+          confirmButton: "dark-confirm-btn",
+          icon: "no-default-icon",
+        },
+      });
 
       event.target.reset();
     } else {
@@ -70,17 +70,19 @@ const Contact = () => {
   return (
     <div id="contact" className="contact">
       <div className="text-center">
-        <h2
-          className="text-4xl tracking-tight text-white"
-          style={{
-            fontFamily: '"Commissioner", sans-serif',
-            fontWeight: 500,
-            letterSpacing: "0.02em",
-          }}
-        >
+        <h2 className="text-center tracking-tight text-2xl md:text-3xl lg:text-4xl text-white mb-0">
           Get In Touch
         </h2>
-        <div className="contact-heading-line"></div>
+        <div
+          className="w-38 md:w-68 lg:w-48 h-[2px] mx-auto mt-2 rounded-sm"
+          style={{
+            background:
+              "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
+            borderRadius: "2px",
+            boxShadow:
+              "0 0 10px rgba(180, 180, 200, 0.5), 0 0 24px rgba(160, 160, 190, 0.25)",
+          }}
+        ></div>
       </div>
       <div className="contact-section">
         <div className="contact-left">

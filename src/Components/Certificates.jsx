@@ -155,7 +155,7 @@ const CertificatesSection = () => {
   return (
     <section
       id="certificates"
-      className="relative px-4 py-8 sm:px-6 sm:py-8 md:py-4 lg:px-4 lg:py-5"
+      className="relative px-4 pt-2 pb-3 sm:px-6 sm:pt-2 sm:pb-3 md:pt-2 md:pb-2 lg:px-2 lg:pt-2 lg:pb-2"
     >
       <div className="text-center mb-4">
         <h2 className="text-center tracking-tight text-2xl md:text-3xl lg:text-4xl text-white mb-0">
@@ -195,7 +195,10 @@ const CertificatesSection = () => {
         ‹
       </div>
 
-      <div style={{ height: "360px", overflow: "hidden", marginTop: "10px" }}>
+      <div
+        className="h-[340px] sm:h-[300px] md:h-[360px]"
+        style={{ overflow: "hidden", marginTop: "10px" }}
+      >
         {/* inner div shifts canvas up to cut top empty space */}
         <div
           style={{ height: "500px", position: "relative", marginTop: "-80px" }}

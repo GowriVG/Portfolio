@@ -98,7 +98,11 @@ const Navbar = () => {
       {/* Logo */}
       <div className="flex flex-shrink-0 items-center">
         <a href="/" aria-label="Home">
-          <img src={logo} className="mr-4" width={150} height={70} alt="Logo" />
+          <img
+            src={logo}
+            className="mr-4 w-24 h-auto sm:w-28 md:w-32 lg:w-[150px]"
+            alt="Logo"
+          />
         </a>
       </div>
 

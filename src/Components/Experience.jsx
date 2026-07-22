@@ -25,7 +25,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative px-4 pt-8 pb-2 sm:px-6 sm:pt-8 sm:pb-2 lg:px-4 lg:pt-5 lg:pb-0"
+      className="relative px-4 pt-2 pb-3 sm:px-6 sm:pt-4 sm:pb-3 md:pt-2 md:pb-3 lg:px-4 lg:px-2 lg:pt-2 lg:pb-8"
     >
       {/* Section Title */}
       <div className="text-center mb-8">
@@ -105,7 +105,7 @@ const Experience = () => {
             <div
               key={exp.id}
               ref={(el) => (itemRefs.current[index] = el)}
-              className="relative mb-12 sm:mb-16"
+              className="relative mb-12 sm:mb-16 last:mb-0"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(32px)",

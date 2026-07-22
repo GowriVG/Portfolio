@@ -182,10 +182,20 @@ const Hero = () => {
   return (
     <section
       id="home"
+      // className="relative w-full overflow-x-hidden
+      //   pt-16 pb-12
+      //   sm:pt-20 sm:pb-16
+      //   lg:min-h-[calc(100vh-80px)] lg:pt-0 lg:pb-0 lg:flex lg:items-center"
+
+      //     className="relative w-full overflow-x-hidden
+      // min-h-[calc(100svh-10rem)] flex flex-col items-center justify-center py-4
+      // md:min-h-0 md:block md:pt-20 md:pb-16
+      // lg:min-h-[calc(100vh-80px)] lg:flex lg:flex-row lg:items-center lg:justify-start lg:pt-0 lg:pb-0"
+
       className="relative w-full overflow-x-hidden
-        pt-16 pb-12
-        sm:pt-20 sm:pb-16
-        lg:min-h-[calc(100vh-80px)] lg:pt-0 lg:pb-0 lg:flex lg:items-center"
+      min-h-[calc(100svh-7.5rem)] flex flex-col items-center justify-center pt-2 pb-[7.5rem]
+      md:min-h-0 md:block md:pt-20 md:pb-16
+      lg:min-h-[calc(100vh-80px)] lg:flex lg:flex-row lg:items-center lg:justify-start lg:pt-0 lg:pb-0"
     >
       <style>{heroBtnStyles}</style>
 

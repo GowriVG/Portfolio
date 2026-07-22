@@ -97,7 +97,7 @@ export const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="relative px-4 pt-2 pb-5 sm:px-6 sm:pt-4 sm:pb-3 md:pt-4 md:pb-8 lg:px-2 lg:pt-2 lg:pb-4"
+      className="relative px-4 pt-2 pb-3 sm:px-6 sm:pt-4 sm:pb-3 md:pt-2 md:pb-2 lg:px-2 lg:pt-2 lg:pb-4"
     >
       <div className="w-full max-w-7xl mx-auto">
         <h2 className="text-center tracking-tight text-2xl md:text-3xl lg:text-4xl text-white mb-0">
@@ -119,7 +119,9 @@ export const ProjectsSection = () => {
           applications.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm gap-6 lg:gap-8 mt-4">
+          
+          
           {Projects.map((project, idx) => (
             <div
               key={project.id}
@@ -128,7 +130,9 @@ export const ProjectsSection = () => {
                 `}
             >
               {/* Image */}
-              <div className="overflow-hidden h-40 bg-neutral-900">
+              {/* <div className="overflow-hidden h-40 bg-neutral-900"> */}
+              <div className="relative overflow-hidden aspect-video bg-neutral-900">
+              {/* <div className="overflow-hidden aspect-video bg-neutral-900"> */}
                 <img
                   src={project.image}
                   alt={project.title}
@@ -136,7 +140,7 @@ export const ProjectsSection = () => {
                 />
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 p-6">
-                  <p className="text-gray-300 text-sm text-center">
+                  <p className="text-xs sm:text-sm text-gray-300 text-center">
                     {project.description}
                   </p>
                   <a
@@ -188,7 +192,7 @@ export const ProjectsSection = () => {
               </div>
 
               {/* Card footer */}
-              <div className="p-5">
+              <div className="p-3 sm:p-4">
                 <div className="flex flex-wrap gap-1.5 mb-3">
                   {project.tags.map((tag, i) => (
                     <span

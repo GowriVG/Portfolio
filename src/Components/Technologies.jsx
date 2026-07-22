@@ -84,14 +84,13 @@ const Technologies = () => {
   return (
     <section
       id="technologies"
-      //className="relative px-4 py-8 sm:px-6 sm:py-8 md:py-8 lg:px-4 lg:py-5"
-      className="relative px-4 pt-10 pb-6 sm:px-6 sm:pt-10 md:pt-12 md:pb-8 lg:px-4"
+      className="relative px-4 pt-2 pb-3 sm:px-6 sm:pt-4 sm:pb-3 md:pt-2 md:pb-2 lg:px-2 lg:pt-2 lg:pb-4"
     >
       <h2 className="text-center tracking-tight text-2xl md:text-3xl lg:text-4xl text-white mb-0">
         Technologies
       </h2>
       <div
-        className="w-44 md:w-34 lg:w-52 h-[2px] mx-auto mt-2 rounded-sm"
+        className="w-34 md:w-34 lg:w-52 h-[2px] mx-auto mt-2 rounded-sm"
         style={{
           background:
             "linear-gradient(to right, transparent, #9999ae, #c8c8d8, #9999ae, transparent)",
@@ -102,7 +101,7 @@ const Technologies = () => {
       />
 
       {/* --- ROW 1: FRONTEND & WEB FRAMEWORKS --- */}
-      <div className="mb-8 mt-12">
+      <div className="mb-8 mt-10">
         <ScrollVelocity velocity={35} className="flex items-center">
           {/* Core Web */}
           <TechCard Icon={FaHtml5} name="HTML5" color="text-orange-500" />
@@ -140,7 +139,7 @@ const Technologies = () => {
       </div>
 
       {/* --- ROW 2: LANGUAGES, DATABASES & TOOLS --- */}
-      <div className="mb-8">
+      <div className="mb-0 mt-10">
         <ScrollVelocity velocity={-35} className="flex items-center">
           {/* Core Languages */}
 
