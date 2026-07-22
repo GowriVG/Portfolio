@@ -67,7 +67,7 @@ export const education = [
       date: "Nov 2021 - April 2024",
       grade: "8.75 CGPA",
       //desc: "I have completed my Bachelor’s degree in Chemistry from Kerala University, where I studied inorganic, organic, and physical chemistry, and gained practical exposure through laboratory work and an internship in polymer chemistry",
-      degree: "Bachelor of Science - BSC (Chemistry)",
+      degree: "Bachelor of Science - B.Sc. (Chemistry)",
     },
     {
       id: 2,
