@@ -5,6 +5,8 @@ import AnimatedText from "./AnimatedText";
 const heroBtnStyles = `
   .hero-btn {
     --line_color: #c8c8d8;
+    --edge-gap: 38px;
+    --short-line: 8px;
     position: relative;
     z-index: 0;
     width: 130px;
@@ -13,7 +15,7 @@ const heroBtnStyles = `
     font-size: 11px;
     font-weight: bold;
     color: var(--line_color);
-    letter-spacing: 2px;ResumeButton
+    letter-spacing: 2px;
     transition: letter-spacing 0.3s ease;
     display: inline-block;
     overflow: hidden;
@@ -37,6 +39,20 @@ const heroBtnStyles = `
       letter-spacing: 2px;
     }
   }
+ .hero-lato,
+.hero-lato * {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.hero-lato {
+  font-weight: 400;
+}
+
+.hero-lato h1 {
+  font-weight: 500;
+}
 
   .hero-btn__text {
     display: flex;
@@ -162,7 +178,11 @@ const heroBtnStyles = `
 
 const ResumeButton = () => (
   // <a href="/Gowri_Resume.pdf" download className="hero-btn">
-    <a href={`${import.meta.env.BASE_URL}Gowri_Resume.pdf`} download className="hero-btn">
+  <a
+    href={`${import.meta.env.BASE_URL}Gowri_Resume.pdf`}
+    download
+    className="hero-btn"
+  >
     <div className="hero-btn__line"></div>
     <div className="hero-btn__line"></div>
     <div className="hero-btn__shimmer">
@@ -188,7 +208,7 @@ const Hero = () => {
       //   sm:pt-20 sm:pb-16
       //   lg:min-h-[calc(100vh-80px)] lg:pt-0 lg:pb-0 lg:flex lg:items-center"
 
-      className="relative w-full overflow-x-hidden
+      className=" hero-lato relative w-full overflow-x-hidden
       min-h-[calc(100svh-7rem)] flex flex-col items-center justify-center pt-2 pb-[7.5rem]
       md:min-h-0 md:block md:pt-20 md:pb-16
       lg:min-h-[calc(100vh-80px)] lg:flex lg:flex-row lg:items-center lg:justify-start lg:pt-0 lg:pb-0"
@@ -221,7 +241,7 @@ const Hero = () => {
         >
           <div className="flex items-center gap-2 mb-3">
             <span className="w-6 h-px bg-stone-500" />
-            <span className="text-[10px] tracking-[0.35em] uppercase text-stone-500">
+            <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-stone-500">
               Hello, i am
             </span>
             <span className="w-6 h-px bg-stone-500" />
@@ -280,7 +300,7 @@ const Hero = () => {
               ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <span className="w-7 h-px bg-stone-500" />
-            <span className="text-xs tracking-[0.3em] uppercase text-stone-500">
+            <span className="text-xs font-bold tracking-[0.3em] uppercase text-stone-500">
               Hello , I am
             </span>
           </div>
