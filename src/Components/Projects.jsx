@@ -1,97 +1,7 @@
 import React from "react";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
-import Project1 from "../assets/projects/project1.png";
-import AzureResourceHealth from "../assets/projects/AzureResourceHealth.png";
-import Lumi from "../assets/projects/Lumi.png";
-import OpsNexus from "../assets/projects/OpsNexus.png";
-import EEPArtifact from "../assets/projects/EEPArtifact.png";
-import Project2 from "../assets/projects/project2.jpg";
-const Projects = [
-  {
-    id: 1,
-    title: "Hospital Management System",
-    description:
-      "A role-based hospital management system for patients, doctors, appointments, and medical records, built with ASP.NET Core MVC, Angular, C#, Entity Framework Core, and SQL Server.",
-    image: Project1,
-    tags: ["ASP.NET Core", "Angular", "C#", "SQL Server"],
-    // demoUrl: "#",
-    githubUrl: "https://github.com/GowriVG/Hospital-Management-System.git",
-  },
-  {
-    id: 2,
-    title: "Azure Resource Health",
-    description:
-      "A role-based hospital management system for patients, doctors, appointments, and medical records, built with ASP.NET Core MVC, Angular, C#, Entity Framework Core, and SQL Server.",
-    image: AzureResourceHealth,
-    tags: ["ASP.NET Core", "Angular", "C#", "SQL Server"],
-    // demoUrl: "#",
-    githubUrl: "https://github.com/GowriVG/Hospital-Management-System.git",
-  },
-  {
-    id: 3,
-    title: "LUMI AI Meeting Assistant",
-    description:
-      "A Microsoft Teams-integrated AI assistant that automates meeting summarization, context-aware Q&A, and work item generation using Azure OpenAI and RAG-powered FastAPI.",
-    image: Lumi,
-    tags: ["Angular", "FastAPI", "Azure OpenAI", "Azure DevOps"],
-    // demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 4,
-    title: "OpsNexus AI Operational Intelligence Portal",
-    description:
-      "A full-stack cloud cost governance platform that analyzes Azure resource utilization, automates DevOps work item creation, and visualizes optimization recommendations through interactive Angular dashboards.",
-    image: OpsNexus,
-    imagePosition: "object-center",
-    tags: ["Angular", "FastAPI", "Azure DevOps", "Chart.js"],
-    // demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 5,
-    title: "EEP Artifacts Integration & Runtime Model Generator",
-    description:
-      "An enterprise-grade Angular and .NET platform that integrates Azure DevOps Artifacts for package management and dynamically generates JSON schemas at runtime using reflection, with an interactive UI for schema exploration and comparison.",
-    image: EEPArtifact,
-    tags: ["Angular", ".NET", "Azure DevOps", "Swagger"],
-    // demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 6,
-    title: "Inventory Management System",
-    description:
-      "A Java Swing desktop application for real-time inventory tracking with full CRUD operations, reducing manual errors and improving data accuracy.",
-    //image: InventoryManagement,
-    image: Project1,
-    tags: ["Java", "Swing", "SQLite"],
-    // demoUrl: "#",
-    githubUrl: "https://github.com/GowriVG/Hospital-Management-System.git",
-  },
-  {
-    id: 7,
-    title: "AI-Based Hand Gesture Math Solver",
-    description:
-      "A real-time AI math solver that interprets mid-air hand gestures using computer vision and solves problems via Gemini 1.5 Flash, with an integrated chatbot for math queries.",
-    //image: MathSolver,
-    image: Project1,
-    tags: ["Python", "OpenCV", "Streamlit", "Gemini API"],
-    // demoUrl: "#",
-    githubUrl: "https://github.com/GowriVG/Hospital-Management-System.git",
-  },
-  {
-    id: 8,
-    title: "Cosmetic Social Media Platform",
-    description:
-      "A real-time AI math solver that interprets mid-air hand gestures using computer vision and solves problems via Gemini 1.5 Flash, with an integrated chatbot for math queries.",
-    //image: CosmeticSocialMedia,
-    image: Project2,
-    tags: ["Python", "OpenCV", "Streamlit", "Gemini API"],
-    // demoUrl: "#",
-    githubUrl: "https://github.com/GowriVG/Hospital-Management-System.git",
-  },
-];
+import { Projects } from "../constants/index.js";
+
 
 export const ProjectsSection = () => {
   return (
@@ -120,8 +30,6 @@ export const ProjectsSection = () => {
         </p>
 
         <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm gap-6 lg:gap-8 mt-4">
-          
-          
           {Projects.map((project, idx) => (
             <div
               key={project.id}
@@ -131,15 +39,15 @@ export const ProjectsSection = () => {
             >
               {/* Image */}
               {/* <div className="overflow-hidden h-40 bg-neutral-900"> */}
-              <div className="relative overflow-hidden aspect-video bg-neutral-900">
-              {/* <div className="overflow-hidden aspect-video bg-neutral-900"> */}
+              {/* <div className="relative overflow-hidden aspect-video bg-neutral-900"> */}
+              <div className=" overflow-hidden aspect-video bg-neutral-900">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 p-6">
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 p-6 ">
                   <p className="text-xs sm:text-sm text-gray-300 text-center">
                     {project.description}
                   </p>
@@ -203,9 +111,29 @@ export const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-                <h3 className="text-base font-semibold text-gray-100">
-                  {project.title}
-                </h3>
+                <div className="flex items-center justify-start gap-2 mt-1">
+                  <h3 className="text-sm font-semibold text-gray-100 leading-snug">
+                    {project.title}
+
+                    {project.githubUrl !== "#" && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="lg:hidden inline-flex ml-1.5 w-5 h-5 items-center justify-center rounded-full border border-neutral-700 hover:border-neutral-400 text-gray-400 hover:text-white transition-all duration-200 align-middle"
+                      >
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 16 16"
+                          fill="white"
+                        >
+                          <path d="M7.99992 1.33331C7.12444 1.33331 6.25753 1.50575 5.4487 1.84078C4.63986 2.17581 3.90493 2.66688 3.28587 3.28593C2.03563 4.53618 1.33325 6.23187 1.33325 7.99998C1.33325 10.9466 3.24659 13.4466 5.89325 14.3333C6.22659 14.3866 6.33325 14.18 6.33325 14C6.33325 13.8466 6.33325 13.4266 6.33325 12.8733C4.48659 13.2733 4.09325 11.98 4.09325 11.98C3.78659 11.2066 3.35325 11 3.35325 11C2.74659 10.5866 3.39992 10.6 3.39992 10.6C4.06659 10.6466 4.41992 11.2866 4.41992 11.2866C4.99992 12.3 5.97992 12 6.35992 11.84C6.41992 11.4066 6.59325 11.1133 6.77992 10.9466C5.29992 10.78 3.74659 10.2066 3.74659 7.66665C3.74659 6.92665 3.99992 6.33331 4.43325 5.85998C4.36659 5.69331 4.13325 4.99998 4.49992 4.09998C4.49992 4.09998 5.05992 3.91998 6.33325 4.77998C6.85992 4.63331 7.43325 4.55998 7.99992 4.55998C8.56659 4.55998 9.13992 4.63331 9.66659 4.77998C10.9399 3.91998 11.4999 4.09998 11.4999 4.09998C11.8666 4.99998 11.6333 5.69331 11.5666 5.85998C11.9999 6.33331 12.2533 6.92665 12.2533 7.66665C12.2533 10.2133 10.6933 10.7733 9.20659 10.94C9.44659 11.1466 9.66659 11.5533 9.66659 12.1733C9.66659 13.0666 9.66659 13.7866 9.66659 14C9.66659 14.18 9.77325 14.3933 10.1133 14.3333C12.7599 13.44 14.6666 10.9466 14.6666 7.99998C14.6666 7.1245 14.4941 6.25759 14.1591 5.44876C13.8241 4.63992 13.333 3.90499 12.714 3.28593C12.0949 2.66688 11.36 2.17581 10.5511 1.84078C9.7423 1.50575 8.8754 1.33331 7.99992 1.33331Z" />
+                        </svg>
+                      </a>
+                    )}
+                  </h3>
+                </div>
               </div>
             </div>
           ))}
